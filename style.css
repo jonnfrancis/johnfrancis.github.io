@@ -213,6 +213,7 @@ img {
 .hero {
   position: relative;
   height: 100vh;
+  height: 100dvh;
   background-color: var(--clr-primary-700);
   display: grid;
   grid-template-columns: 45% 1fr;
@@ -514,6 +515,7 @@ img {
     padding: .75rem 1rem;
     max-width: 12ch;
     margin: auto auto;
+    margin-bottom: 20vh;
     transition: background .5s ease-out;
   }
 
