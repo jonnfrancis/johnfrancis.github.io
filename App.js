@@ -107,6 +107,7 @@ blobs.forEach(blob => {
     blob.style.left = `${Math.random() * 50}vw`;
 });
 
+
 // Set up a click event listener for the button
 const exploreBtn = document.getElementById('explore-btn');
 exploreBtn.addEventListener('click', clearScreen);

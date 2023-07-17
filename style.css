@@ -77,7 +77,6 @@ img {
   padding-left: 1rem;
   padding-right: 1rem;
   z-index: 100;
-  display: none;
 }
 
 .navbar-content {
@@ -513,7 +512,7 @@ img {
     border-radius: 15px;
     background: #3071E7;
     padding: .75rem 1rem;
-    max-width: 13ch;
+    max-width: 12ch;
     margin: auto auto;
     transition: background .5s ease-out;
   }
