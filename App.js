@@ -107,6 +107,106 @@ blobs.forEach(blob => {
     blob.style.left = `${Math.random() * 50}vw`;
 });
 
+// Animate the hero section
+function animateHeroSection() {
+    const timeline = gsap.timeline();
+  
+    timeline.from('.hero', {
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    })
+    .from('.group1', {
+      x: '15%',
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 'start')
+    .from('.group2', {
+      x: '-15%',
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 'start')
+    .from('.greetings', {
+      y: '40',
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 'start')
+    .from('.mobile-hero-text', {
+      y: '80',
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 'start')
+    .from('.mobile-hero-cta', {
+      y: '30',
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 'start')
+    .from('.mobile-bottom-navbar', {
+      width: 0,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 'start');
+  
+    return timeline;
+  }
+  
+  // Call the function to animate the hero section
+  const heroTimeline = animateHeroSection();
+  
+
+// Select the elements
+const mobileNavbar = document.querySelector('.mobile-bottom-navbar');
+const briefcaseIcon = mobileNavbar.querySelector('.bx-briefcase-alt');
+const homeIcon = mobileNavbar.querySelector('.bx-home-alt');
+const boxIcon = mobileNavbar.querySelector('.bx-box');
+
+
+// Add event listeners to the icons
+briefcaseIcon.addEventListener('click', () => {
+  clearHeroSection(() => {
+    addResumeSection();
+  });
+});
+
+homeIcon.addEventListener('click', () => {
+  clearHeroSection(() => {
+    addAboutMeSection();
+  });
+});
+
+boxIcon.addEventListener('click', () => {
+  clearHeroSection(() => {
+    addProjectsSection();
+  });
+});
+
+function clearHeroSection(callback) {
+    const timeline = gsap.timeline({ onComplete: callback });
+  
+    timeline.to('.group1', { x: '15%', opacity: 0, duration: 0.4 }, 'start')
+      .to('.group2', { x: '-15%', opacity: 0, duration: 0.4 }, 'start')
+      .to('.greetings', { y: '-40', opacity: 0, duration: 0.4 }, 'start')
+      .to('.mobile-hero-text', { y: '-80', opacity: 0, duration: 0.4 }, 'start')
+      .to('.mobile-hero-cta', { y: '-30', opacity: 0, duration: 0.4 }, 'start')
+      .to('.mobile-bottom-navbar ul li', { opacity: 0, duration: 0.2 }, 'start')
+      .to('.mobile-bottom-navbar', { width: 0, duration: 0.4 }, 'start')
+      .to('.mobile-container', { y: '-100%', duration: 0.6 }, )
+      .call(removeHeroSection);
+  }
+  
+  function removeHeroSection() {
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+      heroSection.remove();
+    }
+  }
+
 
 // Set up a click event listener for the button
 const exploreBtn = document.getElementById('explore-btn');
@@ -200,6 +300,47 @@ function addAboutMeSection() {
 
     const iconElement = document.createElement("i");
     iconElement.className = "bx bx-arrow-back back-main";
+    iconElement.addEventListener('click', () => {
+        // Create a timeline for the animation
+        const tl = gsap.timeline();
+      
+        // Add animations to the timeline to animate out the elements
+        tl.to(profilePicture, {
+          rotation: 45,
+          scale: 1.2,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out'
+        })
+        .to(catchyText, {
+          y: '-50',
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out'
+        }, '-=0.6')
+        .to(aboutTextContent, {
+          y: '-30',
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out'
+        }, '-=0.6')
+        .to(ctaButton, {
+          y: '30',
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out'
+        }, '-=0.6');
+      
+        // After animating out the elements, bring back the hero section
+        tl.call(() => {
+          // Remove the about section from the DOM
+          section.remove();
+      
+          // Call the function to animate the hero section
+          addProjectsSection();
+        });
+      });
+      
     content.appendChild(iconElement);
 
     const catchyText = document.createElement('h2');
@@ -914,7 +1055,7 @@ function addResumeSection() {
     const name = "John Francis"
     const intro = document.createElement("p");
     intro.classList.add("intro");
-    intro.textContent = `Hi, I'm ${name}, a web developer with expertise in creating responsive and user-friendly web applications. I am passionate about building innovative solutions that deliver seamless user experiences.`;
+    intro.textContent = `Hi, I'm ${name}, I am passionate about building innovative solutions that deliver seamless user experiences.`;
     main.appendChild(intro);
 
     gsap.from(intro, {
