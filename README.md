@@ -8,12 +8,8 @@ Welcome to my portfolio project! This project showcases some of my proudest work
 - [Technologies Used](#technologies-used)
 - [Project Screenshots/GIFs](#project-screenshotsgifs)
 - [Live Demo](jonnfrancis.github.io)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
+  
 ## About the Project
 
 [###]
