@@ -1124,7 +1124,7 @@ img {
     padding: 10px 20px;
     font-size: var(--fs-600);
     position: absolute;
-    bottom: 2rem;
+    bottom: -2rem;
     left: 43%;
     text-decoration: none;
     border-radius: 5px;
