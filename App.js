@@ -1241,10 +1241,10 @@ function addContactUsSection() {
     const facebookLink = createSocialMediaLink('Facebook', 'https://facebook.com', 'bx bxl-facebook');
     socialMediaDiv.appendChild(facebookLink);
 
-    const twitterLink = createSocialMediaLink('Twitter', 'https://twitter.com', 'bx bxl-twitter');
+    const twitterLink = createSocialMediaLink('Twitter', 'https://github.com/jonnfrancis', 'bx bxl-github');
     socialMediaDiv.appendChild(twitterLink);
 
-    const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com', 'bx bxl-instagram');
+    const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com/designed.by_.jf', 'bx bxl-instagram');
     socialMediaDiv.appendChild(instagramLink);
 
     contactInfoSection.appendChild(socialMediaDiv);
