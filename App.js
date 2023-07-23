@@ -106,53 +106,6 @@ blobs.forEach(blob => {
     blob.style.top = `${Math.random() * 100}vh`;
     blob.style.left = `${Math.random() * 50}vw`;
 });
-
-// Animate the hero section
-const timelineX = gsap.timeline();
-  
-timelineX.from('.hero', {
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    })
-    .from('.group1', {
-      x: '15%',
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, 'start')
-    .from('.group2', {
-      x: '-15%',
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, 'start')
-    .from('.greetings', {
-      y: '40',
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, 'start')
-    .from('.mobile-hero-text', {
-      y: '80',
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, 'start')
-    .from('.mobile-hero-cta', {
-      y: '30',
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, 'start')
-    .from('.mobile-bottom-navbar', {
-      width: 0,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, 'start');
-  
-
 // Select the elements
 const mobileNavbar = document.querySelector('.mobile-bottom-navbar');
 const briefcaseIcon = mobileNavbar.querySelector('.bx-briefcase-alt');
