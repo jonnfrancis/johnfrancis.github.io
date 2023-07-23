@@ -1234,6 +1234,7 @@ aside {
 .intro {
   font-size: var(--fs-500);
   max-width: 45ch;
+  text-align: justify;
 }
 
 .job-experience {
