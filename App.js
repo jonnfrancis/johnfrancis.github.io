@@ -108,10 +108,9 @@ blobs.forEach(blob => {
 });
 
 // Animate the hero section
-function animateHeroSection() {
-    const timeline = gsap.timeline();
+const timelineX = gsap.timeline();
   
-    timeline.from('.hero', {
+timelineX.from('.hero', {
       opacity: 0,
       duration: 0.8,
       ease: 'power3.out'
@@ -152,12 +151,6 @@ function animateHeroSection() {
       duration: 0.8,
       ease: 'power3.out'
     }, 'start');
-  
-    return timeline;
-  }
-  
-  // Call the function to animate the hero section
-  const heroTimeline = animateHeroSection();
   
 
 // Select the elements
