@@ -1001,7 +1001,7 @@ function addResumeSection() {
     const name = "John Francis"
     const intro = document.createElement("p");
     intro.classList.add("intro");
-    intro.textContent = `Hi, I'm ${name}, I am passionate about building innovative solutions that deliver seamless user experiences.`;
+    intro.textContent = `Hi, I'm ${name}, I'm passionate about building innovative solutions that deliver seamless user experiences.`;
     main.appendChild(intro);
 
     gsap.from(intro, {
@@ -1345,6 +1345,8 @@ function addContactUsSection() {
                 showErrorMessage();
                 console.error(error);
             });
+         // Reload the page after form submission
+        location.reload();
     });
 
     // Add form to feedback section
