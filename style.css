@@ -399,7 +399,7 @@ img {
   }
 
   .name-container h1 {
-    font-size: 5rem;
+    font-size: var(--fs-700);
     margin: 0;
   }
 
@@ -418,7 +418,7 @@ img {
   .group1 .name1 {
     font-family: var(--ff-inter);
     font-weight: 600;
-    font-size: 4.5rem;
+    font-size: var(--fs-700);
     line-height: 117.5%;
     color: rgba(48, 113, 231, 0.5);
     opacity: 0.5;
@@ -429,7 +429,7 @@ img {
     font-style: normal;
     font-weight: var(--fw-regular);
     line-height: 117.5%;
-    font-size: 4.5rem;
+    font-size: var(--fs-700);
     color: rgba(48, 113, 231, 0.5);
     opacity: 0.5;
   }
@@ -437,7 +437,7 @@ img {
   .group2 .name3 {
     color: rgba(48, 113, 231, 0.50);
     font-family: var(--ff-inter);
-    font-size: 4.5rem;
+    font-size: var(--fs-700);
     font-style: normal;
     font-weight: 275;
     line-height: 117.5%;
@@ -446,7 +446,7 @@ img {
   .group2 .name4 {
     color: rgba(48, 113, 231, 0.50);
     font-family: var(--ff-inter);
-    font-size: 4.5rem;
+    font-size: var(--fs-700);
     font-style: normal;
     font-weight: var(--fw-semi-bold);
     line-height: 117.5%;
