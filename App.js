@@ -1345,8 +1345,7 @@ function addContactUsSection() {
                 showErrorMessage();
                 console.error(error);
             });
-         // Reload the page after form submission
-        location.reload();
+         
     });
 
     // Add form to feedback section
@@ -1375,6 +1374,8 @@ function addContactUsSection() {
 
         setTimeout(() => {
             alertDiv.remove();
+            // Reload the page after form submission
+            location.reload();
         }, 3000);
     }
 
