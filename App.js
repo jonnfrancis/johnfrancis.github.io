@@ -1362,6 +1362,8 @@ function addContactUsSection() {
 
         setTimeout(() => {
             alertDiv.remove();
+            // Reload the page after form submission
+            location.reload();
         }, 3000);
     }
 
@@ -1374,8 +1376,6 @@ function addContactUsSection() {
 
         setTimeout(() => {
             alertDiv.remove();
-            // Reload the page after form submission
-            location.reload();
         }, 3000);
     }
 
