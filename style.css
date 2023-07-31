@@ -757,7 +757,7 @@ img {
   font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
 }
 
 .chat-box .message {
@@ -816,7 +816,7 @@ img {
     height: 100vh;
   }
   .chat-box {
-    opacity: 1;
+    opacity: 0;
   }
 
   .about-section .profile-picture {
@@ -846,6 +846,11 @@ img {
 /*  project section  */
 #root {
   background-color: var(--clr-primary-400);
+  height: 100vh;
+  background-image: url("/Illustration.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   position: relative;
   margin: 0;
   padding: 0;
@@ -921,7 +926,7 @@ img {
   padding: .75rem;
   border-radius: 7px;
   background-color: var(--clr-primary-400);
-
+  backdrop-filter: blur(10px);
 }
 
 
@@ -1522,10 +1527,10 @@ select {
 }
 
 select::-ms-expand {
-  display: none
+  display: none;
 }
 
-;
+
 
 @-moz-document url-prefix() {
   select {
