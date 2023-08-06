@@ -1,7 +1,4 @@
 import './style.css'
-import projectIllustration from './public/Illustration.png'
-// import viteLogo from '/vite.svg'
-// import { setupCounter } from './counter.js'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -113,6 +110,11 @@ blobs.forEach(blob => {
 });
 // Select the elements
 const mobileNavbar = document.querySelector('.mobile-bottom-navbar');
+const xlNavbar = document.querySelector('.navbar-menu');
+const resume = xlNavbar.querySelector('#resume')
+const profile = xlNavbar.querySelector('#profile')
+const projo = xlNavbar.querySelector('#projects')
+const bton = document.querySelector('#contact')
 const briefcaseIcon = mobileNavbar.querySelector('.bx-briefcase-alt');
 const homeIcon = mobileNavbar.querySelector('.bx-home-alt');
 const boxIcon = mobileNavbar.querySelector('.bx-box');
@@ -136,6 +138,32 @@ clearHeroSection(() => {
   addProjectsSection();
 });
 });
+
+
+
+// Add event listeners to the icons
+resume.addEventListener('click', () => {
+    clearHeroSection(() => {
+      addResumeSection();
+    });
+    });
+    
+    profile.addEventListener('click', () => {
+    clearHeroSection(() => {
+      addAboutMeSection();
+    });
+    });
+    
+    projo.addEventListener('click', () => {
+    clearHeroSection(() => {
+      addProjectsSection();
+    });
+    });
+    bton.addEventListener('click', () => {
+    clearHeroSection(() => {
+      addContactUsSection();
+    });
+    });
 
 function clearHeroSection(callback) {
   const timeline = gsap.timeline({ onComplete: callback });
