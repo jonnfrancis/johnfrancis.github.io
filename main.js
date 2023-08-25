@@ -1277,7 +1277,7 @@ function addContactUsSection() {
   const twitterLink = createSocialMediaLink('Twitter', 'https://github.com/jonnfrancis', 'bx bxl-github');
   socialMediaDiv.appendChild(twitterLink);
 
-  const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com/designed.by_.jf', 'bx bxl-instagram');
+  const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com/johnfrancis.dev', 'bx bxl-instagram');
   socialMediaDiv.appendChild(instagramLink);
 
   contactInfoSection.appendChild(socialMediaDiv);
