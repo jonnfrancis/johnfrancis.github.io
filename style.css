@@ -221,6 +221,7 @@ img {
   grid-template-columns: 45% 1fr;
   margin: 0;
   overflow: hidden;
+  opacity: 0;
 }
 
 .hero-content {
