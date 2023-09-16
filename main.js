@@ -865,70 +865,70 @@ function addProjectsSection() {
 
   requestAnimationFrame(raf)
 
-//   if (window.innerWidth >= 780) {
-//       gsap.timeline({
-//               scrollTrigger: {
-//                   trigger: '.project-card',
-//                   scrub: true,
-//               }
-//           })
-//           .to('.project-card', {
-//               stagger: .2,
-//               y: -500
-//           })
+  if (window.innerWidth >= 780) {
+      gsap.timeline({
+              scrollTrigger: {
+                  trigger: '.project-card',
+                  scrub: true,
+              }
+          })
+          .to('.project-card', {
+              stagger: .2,
+              y: -500
+          })
 
-//       gsap.set('.projects-container', {
-//           opacity: 0,
-//           y: 100
-//       });
-//       gsap.set('.projects-title, .projects-text, .projects-paragraph, .projects-link, .scroll-down', {
-//           opacity: 0,
-//           y: 50
-//       });
+      gsap.set('.projects-container', {
+          opacity: 0,
+          y: 100
+      });
+      gsap.set('.projects-title, .projects-text, .projects-paragraph, .projects-link, .scroll-down', {
+          opacity: 0,
+          y: 50
+      });
 
-//       gsap.to('.projects-container', {
-//           opacity: 1,
-//           y: 0,
-//           duration: 1.5,
-//           ease: 'power3.out'
-//       });
-//       gsap.to('.projects-title', {
-//           opacity: 1,
-//           y: 0,
-//           duration: 1,
-//           delay: 0.5,
-//           ease: 'power2.out'
-//       });
-//       gsap.to('.projects-text', {
-//           opacity: 1,
-//           y: 0,
-//           duration: 1,
-//           delay: 1,
-//           ease: 'power2.out'
-//       });
-//       gsap.to('.projects-paragraph', {
-//           opacity: 1,
-//           y: 0,
-//           duration: 1,
-//           delay: 1.5,
-//           ease: 'power2.out'
-//       });
-//       gsap.to('.projects-link', {
-//           opacity: 1,
-//           y: 0,
-//           duration: 1,
-//           delay: 2,
-//           ease: 'power2.out'
-//       });
-//       gsap.to('.scroll-down', {
-//           opacity: 1,
-//           y: 0,
-//           duration: 1,
-//           delay: 2.5,
-//           ease: 'power2.out'
-//       });
+      gsap.to('.projects-container', {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: 'power3.out'
+      });
+      gsap.to('.projects-title', {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.5,
+          ease: 'power2.out'
+      });
+      gsap.to('.projects-text', {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 1,
+          ease: 'power2.out'
+      });
+      gsap.to('.projects-paragraph', {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 1.5,
+          ease: 'power2.out'
+      });
+      gsap.to('.projects-link', {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 2,
+          ease: 'power2.out'
+      });
+      gsap.to('.scroll-down', {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 2.5,
+          ease: 'power2.out'
+      });
 
-//   }
+  }
 
 
 
@@ -1312,7 +1312,7 @@ function addContactUsSection() {
   form.appendChild(emailInput);
 
   // Phone input
-  const phoneInput = createFeedbackInput('Message', 'text', 'phone', 'Your Message');
+  const phoneInput = createFeedbackInput('Message', 'text', 'message', 'Your Message');
   form.appendChild(phoneInput);
 
   // How did you find us dropdown
@@ -1355,7 +1355,7 @@ function addContactUsSection() {
       // Get form values
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
+      const phone = document.getElementById('message').value;
       const findUs = document.getElementById('find-us-dropdown').value;
 
       // Create a reference to the Firebase database
