@@ -314,7 +314,7 @@
         const content = document.createElement('div');
         content.classList.add('about-content');
 
-        const backgroundImage = 'url(https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)';
+        const backgroundImage = `url('./Projects/about-bg.jpg')`;
         section.style.backgroundImage = backgroundImage;
 
         const profilePicture = document.createElement('img');
