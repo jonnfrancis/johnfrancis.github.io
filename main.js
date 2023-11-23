@@ -14,7 +14,7 @@
     };
     firebase.initializeApp(firebaseConfig)
 
-    
+
     addHeroSection()
     addAboutMeSection()
     addProjectsSection()
@@ -217,8 +217,21 @@
 
         function removeHeroSection() {
             const heroSection = document.querySelector('.hero');
+            const projectsContent = document.querySelector('.projects-section');
+            const projectsSection = document.querySelector('#root');
+            const aboutUs = document.querySelector('.about-section');
+
             if (heroSection) {
                 heroSection.remove();
+            }
+            if (projectsContent) {
+                projectsContent.remove();
+            }
+            if (projectsSection) {
+                projectsSection.remove();
+            }
+            if (aboutUs) {
+                aboutUs.remove();
             }
         }
 
@@ -239,7 +252,16 @@
             const heroSection = document.querySelector('.hero');
             heroSection.parentNode.removeChild(heroSection);
 
-            addAboutMeSection()
+            const projectsContent = document.querySelector('.projects-section');
+            projectsContent.parentNode.removeChild(projectsContent);
+
+            const projectsSection = document.querySelector('#root');
+            projectsSection.parentNode.removeChild(projectsSection);
+
+            const aboutUs = document.querySelector('.about-section');
+            aboutUs.parentNode.removeChild(aboutUs);
+
+            addResumeSection()
 
         }
         // Function to animate and clear the screen
@@ -299,9 +321,6 @@
                 const aboutUs = document.querySelector('.about-section');
                 aboutUs.parentNode.removeChild(aboutUs);
             }
-
-
-
 
         }
     }
@@ -395,7 +414,7 @@
         const tab2Link = document.createElement('a');
         tab2Link.id = 'tab-2';
         tab2Link.href = '#social-media';
-        tab2Link.textContent = 'Experience';
+        tab2Link.textContent = 'Bio';
         tab2.appendChild(tab2Link);
         tabsList.appendChild(tab2);
 
@@ -403,7 +422,7 @@
         const tab3Link = document.createElement('a');
         tab3Link.id = 'tab-3';
         tab3Link.href = '#content-marketing';
-        tab3Link.textContent = 'Reviews';
+        tab3Link.textContent = 'Experience';
         tab3.appendChild(tab3Link);
         tabsList.appendChild(tab3);
 
@@ -429,7 +448,7 @@
         aboutMeSection.appendChild(aboutMeParagraph);
 
         const contactParagraph = document.createElement('p');
-        contactParagraph.textContent = 'Explore the possibilities with John by reaching out below.';
+        contactParagraph.textContent = 'Explore the possibilities with John by reaching out below. ';
         aboutMeSection.appendChild(contactParagraph);
 
         advertisingPanel.appendChild(aboutMeSection);
@@ -477,6 +496,10 @@
         experiencePanel.appendChild(bioPanel);
         tabsPanels.appendChild(advertisingPanel);
 
+        const reviewsPanel = document.createElement('div');
+        reviewsPanel.id = 'content-marketing';
+        reviewsPanel.setAttribute('aria-labelledby', 'tab-3');
+
         const expPanel = document.createElement('div');
 
         const experienceTitle = document.createElement('h2');
@@ -494,13 +517,10 @@
         </li>
     `;
         expPanel.appendChild(experienceList)
-        experiencePanel.appendChild(expPanel);
 
-        tabsPanels.appendChild(experiencePanel);
+        reviewsPanel.appendChild(expPanel);
 
-        const reviewsPanel = document.createElement('div');
-        reviewsPanel.id = 'content-marketing';
-        reviewsPanel.setAttribute('aria-labelledby', 'tab-3');
+        tabsPanels.appendChild(reviewsPanel);
 
         const reviewsTitle = document.createElement('h2');
         reviewsTitle.textContent = 'Reviews';
@@ -772,7 +792,7 @@
         section.appendChild(projectsContainer);
 
         const scrollDown = document.createElement('div');
-        scrollDown.textContent = "Scroll Down"
+        scrollDown.textContent = "Keep Scrolling"
         scrollDown.classList.add('scroll-down');
 
         const arrow = document.createElement('div');
@@ -1043,10 +1063,9 @@
             ease: "power2.out",
         });
 
-        const name = "John Francis"
         const intro = document.createElement("p");
         intro.classList.add("intro");
-        intro.textContent = `Hi, I'm ${name}, I'm passionate about building innovative solutions that deliver seamless user experiences.`;
+        intro.innerHTML = `Enthusiastic about coding since 2020, I embarked on my journey with short courses, progressively advancing to complete two online courses from Harvard University via edX.<br> By 2021, I proudly earned certification as a proficient web developer, specializing in Python and JavaScript.<br>My expertise extends to crafting modern, sleek, and responsive web projects and applications.`;
         main.appendChild(intro);
 
         gsap.from(intro, {
@@ -1061,6 +1080,12 @@
         jobExperience.classList.add("job-experience");
 
         const jobsData = [{
+                year: "2023",
+                certificate: "Introduction to AI",
+                institution: "HarvardX",
+                info: "This course explores the concepts and algorithms at the foundation of modern artificial intelligence",
+            },
+            {
                 year: "2022",
                 certificate: "React",
                 institution: "Free Code Camp",
@@ -1250,12 +1275,22 @@
         const container = document.createElement('div');
         container.classList.add('contact-container');
 
-        const iconElement = document.createElement("i");
-        iconElement.className = "bx bx-arrow-back back-main";
-        iconElement.addEventListener('click', () => {
+        const backButton = document.createElement("div");
+        backButton.classList.add("back-button");
+        backButton.innerHTML = '<i class="bx bx-left-arrow-alt icon"></i>';
+        backButton.addEventListener('click', () => {
             location.replace(location.href);
         });
-        container.appendChild(iconElement);
+        container.appendChild(backButton);
+
+        // Create the GSAP animation for the back arrow icon
+        gsap.to(backButton.querySelector(".icon"), {
+            x: -10,
+            repeat: -1,
+            yoyo: true,
+            duration: 0.5,
+            ease: "power1.inOut",
+        });
 
         // Div for title and p
         const titleWrapper = document.createElement('div');

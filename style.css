@@ -1249,9 +1249,12 @@ aside {
 }
 
 .intro {
-  font-size: var(--fs-500);
-  max-width: 45ch;
+  font-size: var(--fs-400);
+  max-width: 50%;
+  margin-bottom: 2rem;
+  line-height: 1.6;
   text-align: justify;
+  font-family: var(--ff-gd);
 }
 
 .job-experience {
@@ -1290,7 +1293,7 @@ aside {
 }
 
 .job:first-child::before {
-  content: " Latest Course";
+  content: " Ongoing Course";
   position: absolute;
   color: var(--clr-accent-400);
   top: 0;
@@ -1352,6 +1355,46 @@ aside {
   border-radius: 50%;
   outline: .5rem solid var(--clr-primary-400);
   background: var(--clr-nuetral-100);
+}
+
+@media (max-width : 640px) {
+  main {
+    width: min(50rem, 100% - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+  aside {}
+  .resume-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .resume-section .icon-list {
+    grid-template-columns: 1fr 1fr;
+    width: min(50rem, 100% - 2rem);
+  }
+  .icon-list>li {
+    --_size: 0.3rem;
+  }
+  .back-button {
+    top: 1rem;
+    left: 80%;
+    width: 48px;
+  }
+  .job {
+    width: 20rem;
+  }
+  .job-info {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .year { 
+    text-align: right;
+  }
+  .intro { 
+    max-width: 100%;
+  }
 }
 
 /*----------------------contact us section------------------------------------------*/
