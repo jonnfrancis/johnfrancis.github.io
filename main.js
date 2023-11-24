@@ -414,7 +414,7 @@
         const tab2Link = document.createElement('a');
         tab2Link.id = 'tab-2';
         tab2Link.href = '#social-media';
-        tab2Link.textContent = 'Bio';
+        tab2Link.textContent = 'Experience';
         tab2.appendChild(tab2Link);
         tabsList.appendChild(tab2);
 
@@ -422,7 +422,7 @@
         const tab3Link = document.createElement('a');
         tab3Link.id = 'tab-3';
         tab3Link.href = '#content-marketing';
-        tab3Link.textContent = 'Experience';
+        tab3Link.textContent = 'Reviews';
         tab3.appendChild(tab3Link);
         tabsList.appendChild(tab3);
 
@@ -448,7 +448,7 @@
         aboutMeSection.appendChild(aboutMeParagraph);
 
         const contactParagraph = document.createElement('p');
-        contactParagraph.textContent = 'Explore the possibilities with John by reaching out below. ';
+        contactParagraph.textContent = 'Explore the possibilities with John by reaching out below.';
         aboutMeSection.appendChild(contactParagraph);
 
         advertisingPanel.appendChild(aboutMeSection);
@@ -496,10 +496,6 @@
         experiencePanel.appendChild(bioPanel);
         tabsPanels.appendChild(advertisingPanel);
 
-        const reviewsPanel = document.createElement('div');
-        reviewsPanel.id = 'content-marketing';
-        reviewsPanel.setAttribute('aria-labelledby', 'tab-3');
-
         const expPanel = document.createElement('div');
 
         const experienceTitle = document.createElement('h2');
@@ -517,10 +513,13 @@
         </li>
     `;
         expPanel.appendChild(experienceList)
+        experiencePanel.appendChild(expPanel);
 
-        reviewsPanel.appendChild(expPanel);
+        tabsPanels.appendChild(experiencePanel);
 
-        tabsPanels.appendChild(reviewsPanel);
+        const reviewsPanel = document.createElement('div');
+        reviewsPanel.id = 'content-marketing';
+        reviewsPanel.setAttribute('aria-labelledby', 'tab-3');
 
         const reviewsTitle = document.createElement('h2');
         reviewsTitle.textContent = 'Reviews';
