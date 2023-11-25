@@ -333,11 +333,11 @@
         const content = document.createElement('div');
         content.classList.add('about-content');
     
-        const backgroundImage = 'url(./public/Projects/about-bg.jpg)';
+        const backgroundImage = 'url(./Projects/about-bg.jpg)';
         section.style.backgroundImage = backgroundImage;
     
         const profilePicture = document.createElement('img');
-        profilePicture.src = './Projects/John.jpg';
+        profilePicture.src = './Projects/profile-pic.png';
         profilePicture.classList.add('profile-picture');
         content.appendChild(profilePicture);
     
@@ -516,7 +516,7 @@
             <p class="experiences-title">Front End<span class="experiences-span">@tripplesee | 2022</span></p>
             </li>
             <li class="experience-item">
-            <p class="experiences-title">Job Title <span class="experiences-span">@company | year</span></p>
+            <p class="experiences-title">Consultant <span class="experiences-span">@Ilepa | 2023</span></p>
             </li>
         `;
         expPanel.appendChild(experienceList)
@@ -627,7 +627,7 @@
         }
     
         const ctaButton = document.createElement('a');
-        ctaButton.textContent = 'My Projects';
+        ctaButton.textContent = 'Hit me up!';
         ctaButton.classList.add('cta-button');
         ctaButton.addEventListener('click', clearAboutSection);
         aboutTextContent.appendChild(ctaButton);
@@ -640,49 +640,27 @@
     
         function clearAboutSection() {
             const timeline = gsap.timeline();
+
+            
     
             // Select the "About Us" section element
             const aboutSection = section
-    
-            // Create a wrapper element to hold the animated elements
-            const wrapper = document.createElement('div');
-            wrapper.classList.add('about-clear-animation');
-            aboutSection.appendChild(wrapper);
-    
-            // Get the elements to animate
-            const elements = aboutSection.querySelectorAll('.about-content > *');
-    
-            // Reverse the order of the elements
-            const reversedElements = [...elements].reverse();
-    
-            // Set initial positions for the elements
-            gsap.set(elements, {
-                opacity: 1,
-                y: 0
-            });
-    
-            // Add animations to remove elements one by one
-            reversedElements.forEach((element, index) => {
-                timeline.to(element, {
-                    opacity: 0,
-                    y: -20,
-                    duration: 0.3,
-                    delay: index * 0.1
-                }, 'start');
-            });
-    
-            // Animate the wrapper element to fade out the entire section
-            timeline.to(wrapper, {
-                    opacity: 0,
-                    duration: 0.3
-                }, '-=0.3')
-                .call(removeAboutSection);
-    
-            function removeAboutSection() {
-                // Remove the "About Us" section from the DOM
-                aboutSection.remove();
+            const heroSection = document.querySelector('.hero');
+            const projectsContent = document.querySelector('.projects-section');
+            const projectsSection = document.querySelector('#root');
+            console.log("clicked")
+            
+            if (heroSection) {
+                heroSection.remove();
             }
-            addProjectsSection();
+            if (projectsContent) {
+                projectsContent.remove();
+            }
+            if (projectsSection) {
+                projectsSection.remove();
+            }
+            aboutSection.remove();
+            addContactUsSection();
         }
         }
 
@@ -953,11 +931,12 @@
 
 
         function removeProjectsSection() {
-            // Select the necessary elements
-            const projectsSection = document.querySelector('.projects-section');
-            const projectsLink = document.querySelector('.projects-link');
+            const heroSection = document.querySelector('.hero');
+            const projectsContent = document.querySelector('.projects-section');
+            const projectsSection = document.querySelector('#root');
+            const aboutUs = document.querySelector('.about-section');
 
-            // Animate the removal of elements
+
             gsap.timeline()
                 .to(projectsSection, {
                     rotationX: -90,
@@ -967,10 +946,20 @@
                 });
 
             function removeSection() {
-                // Remove the projects section from the DOM
                 rootContainer.remove();
 
-                // Call the addResumeSection function
+                if (heroSection) {
+                    heroSection.remove();
+                }
+                if (projectsContent) {
+                    projectsContent.remove();
+                }
+                if (projectsSection) {
+                    projectsSection.remove();
+                }
+                if (aboutUs) {
+                    aboutUs.remove();
+                }
             }
 
         }
