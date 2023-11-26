@@ -329,80 +329,80 @@
     function addAboutMeSection() {
         const section = document.createElement('section');
         section.classList.add('about-section');
-    
+
         const content = document.createElement('div');
         content.classList.add('about-content');
-    
+
         const backgroundImage = 'url(./Projects/about-bg.jpg)';
         section.style.backgroundImage = backgroundImage;
-    
+
         const profilePicture = document.createElement('img');
         profilePicture.src = './Projects/profile-pic.png';
         profilePicture.classList.add('profile-picture');
         content.appendChild(profilePicture);
-    
+
         const iconElement = document.createElement("i");
         iconElement.className = "bx bx-arrow-back back-main";
         iconElement.addEventListener('click', () => {
             // Create a timeline for the animation
             const tl = gsap.timeline();
-            
+
             // Add animations to the timeline to animate out the elements
             tl.to(profilePicture, {
-                rotation: 45,
-                scale: 1.2,
-                opacity: 0,
-                duration: 0.8,
-                ease: 'power3.out'
-            })
-            .to(catchyText, {
-                y: '-50',
-                opacity: 0,
-                duration: 0.6,
-                ease: 'power3.out'
-            }, '-=0.6')
-            .to(aboutTextContent, {
-                y: '-30',
-                opacity: 0,
-                duration: 0.6,
-                ease: 'power3.out'
-            }, '-=0.6')
-            .to(ctaButton, {
-                y: '30',
-                opacity: 0,
-                duration: 0.6,
-                ease: 'power3.out'
-            }, '-=0.6');
-            
+                    rotation: 45,
+                    scale: 1.2,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: 'power3.out'
+                })
+                .to(catchyText, {
+                    y: '-50',
+                    opacity: 0,
+                    duration: 0.6,
+                    ease: 'power3.out'
+                }, '-=0.6')
+                .to(aboutTextContent, {
+                    y: '-30',
+                    opacity: 0,
+                    duration: 0.6,
+                    ease: 'power3.out'
+                }, '-=0.6')
+                .to(ctaButton, {
+                    y: '30',
+                    opacity: 0,
+                    duration: 0.6,
+                    ease: 'power3.out'
+                }, '-=0.6');
+
             // After animating out the elements, bring back the hero section
             tl.call(() => {
                 // Remove the about section from the DOM
                 section.remove();
-            
+
                 // Call the function to animate the hero section
                 addProjectsSection();
             });
-            });
-            
+        });
+
         content.appendChild(iconElement);
-    
+
         const catchyText = document.createElement('h2');
         catchyText.textContent = 'Crafting Innovative Web Experiences';
         catchyText.classList.add('catchy-text');
         content.appendChild(catchyText);
-    
+
         const aboutTextContent = document.createElement('div');
         aboutTextContent.classList.add('about-text-content');
-    
+
         const tabsWrapper = document.createElement('div');
         tabsWrapper.classList.add('wrapper');
-    
+
         const tabsContainer = document.createElement('div');
         tabsContainer.classList.add('tabs-container');
-    
+
         const tabsList = document.createElement('ul');
         tabsList.setAttribute('aria-labelledby', 'tabs-title');
-    
+
         const tab1 = document.createElement('li');
         const tab1Link = document.createElement('a');
         tab1Link.id = 'tab-1';
@@ -410,7 +410,7 @@
         tab1Link.textContent = 'Personal info';
         tab1.appendChild(tab1Link);
         tabsList.appendChild(tab1);
-    
+
         const tab2 = document.createElement('li');
         const tab2Link = document.createElement('a');
         tab2Link.id = 'tab-2';
@@ -418,7 +418,7 @@
         tab2Link.textContent = 'Bio';
         tab2.appendChild(tab2Link);
         tabsList.appendChild(tab2);
-    
+
         const tab3 = document.createElement('li');
         const tab3Link = document.createElement('a');
         tab3Link.id = 'tab-3';
@@ -426,46 +426,46 @@
         tab3Link.textContent = 'Experience';
         tab3.appendChild(tab3Link);
         tabsList.appendChild(tab3);
-    
+
         tabsContainer.appendChild(tabsList);
-    
+
         tabsWrapper.appendChild(tabsContainer);
-    
+
         const tabsPanels = document.createElement('div');
         tabsPanels.classList.add('tabs__panels', 'flow');
-    
+
         const advertisingPanel = document.createElement('div');
         advertisingPanel.id = 'advertising';
         advertisingPanel.setAttribute('aria-labelledby', 'tab-1');
-    
+
         const aboutMeSection = document.createElement('div');
         const aboutMeTitle = document.createElement('h2');
         aboutMeTitle.textContent = 'About Me';
         aboutMeSection.appendChild(aboutMeTitle);
-    
+
         const aboutMeParagraph = document.createElement('p');
         aboutMeParagraph.textContent =
             'John Francis, a web developer and UI designer, offers expertise in crafting impactful digital experiences. By combining cutting-edge technologies with creative design solutions, he delivers engaging websites and user interfaces that captivate your audience.';
         aboutMeSection.appendChild(aboutMeParagraph);
-    
+
         const contactParagraph = document.createElement('p');
         contactParagraph.textContent = 'Feel free to reach out to me for any specific queries.';
         aboutMeSection.appendChild(contactParagraph);
-    
+
         advertisingPanel.appendChild(aboutMeSection);
         tabsPanels.appendChild(advertisingPanel);
-    
+
         const experiencePanel = document.createElement('div');
         experiencePanel.id = 'social-media';
         experiencePanel.setAttribute('aria-labelledby', 'tab-2');
-    
+
         const bioPanel = document.createElement('div');
         const bioTitle = document.createElement('h2');
         bioTitle.textContent = 'Bio';
         bioPanel.appendChild(bioTitle);
-    
+
         const bioContent = document.createElement('div');
-    
+
         const nameDiv = document.createElement('div');
         const nameTitle = document.createElement('h2');
         nameTitle.textContent = 'Name:';
@@ -474,7 +474,7 @@
         nameDiv.appendChild(nameTitle);
         nameDiv.appendChild(nameText);
         bioContent.appendChild(nameDiv);
-    
+
         const occupationDiv = document.createElement('div');
         const occupationTitle = document.createElement('h2');
         occupationTitle.textContent = 'Occupation:';
@@ -483,7 +483,7 @@
         occupationDiv.appendChild(occupationTitle);
         occupationDiv.appendChild(occupationText);
         bioContent.appendChild(occupationDiv);
-    
+
         const ageDiv = document.createElement('div');
         const ageTitle = document.createElement('h2');
         ageTitle.textContent = 'Age:';
@@ -492,24 +492,24 @@
         ageDiv.appendChild(ageTitle);
         ageDiv.appendChild(ageText);
         bioContent.appendChild(ageDiv);
-    
+
         bioPanel.appendChild(bioContent);
         experiencePanel.appendChild(bioPanel);
         tabsPanels.appendChild(advertisingPanel);
-    
+
         tabsPanels.appendChild(experiencePanel);
-    
+
         const reviewsPanel = document.createElement('div');
         reviewsPanel.id = 'content-marketing';
         reviewsPanel.setAttribute('aria-labelledby', 'tab-3');
-    
+
         const expPanel = document.createElement('div');
-    
+
         const experienceTitle = document.createElement('h2');
         experienceTitle.textContent = 'Experience';
         expPanel.appendChild(experienceTitle);
-    
-    
+
+
         const experienceList = document.createElement('ul');
         experienceList.innerHTML = `
             <li class="experience-item">
@@ -521,28 +521,25 @@
         `;
         expPanel.appendChild(experienceList)
         reviewsPanel.appendChild(expPanel);
-    
-       
-    
-    
-        const reviewsTitle = document.createElement('h2');
+
+        const reviewsTitle = document.createElement('div');
         reviewsTitle.textContent = 'Reviews';
         reviewsPanel.appendChild(reviewsTitle);
-    
+
         tabsPanels.appendChild(reviewsPanel);
-    
+
         tabsContainer.appendChild(tabsPanels);
         tabsWrapper.appendChild(tabsContainer);
         aboutTextContent.appendChild(tabsWrapper)
-    
+
         const tabButtons = tabsList.querySelectorAll("a");
         const tabPanels = tabsContainer.querySelectorAll(".tabs__panels > div");
         tabsList.setAttribute("role", "tablist");
-    
+
         tabsList.querySelectorAll("li").forEach((listitem) => {
             listitem.setAttribute("role", "presentation");
         });
-    
+
         tabButtons.forEach((tab, index) => {
             tab.setAttribute("role", "tab");
             if (index === 0) {
@@ -553,20 +550,20 @@
                 tabPanels[index].setAttribute("hidden", "");
             }
         });
-    
+
         tabPanels.forEach((panel) => {
             panel.setAttribute("role", "tabpanel");
             panel.setAttribute("tabindex", "0");
         });
-    
+
         tabsContainer.addEventListener("click", (e) => {
             const clickedTab = e.target.closest("a");
             if (!clickedTab) return;
             e.preventDefault();
-    
+
             switchTab(clickedTab);
         });
-    
+
         tabsContainer.addEventListener("keydown", (e) => {
             switch (e.key) {
                 case "ArrowLeft":
@@ -585,7 +582,7 @@
                     break;
             }
         });
-    
+
         function moveLeft() {
             const currentTab = document.activeElement;
             if (!currentTab.parentElement.previousElementSibling) {
@@ -596,7 +593,7 @@
                 );
             }
         }
-    
+
         function moveRight() {
             const currentTab = document.activeElement;
             if (!currentTab.parentElement.nextElementSibling) {
@@ -605,51 +602,51 @@
                 switchTab(currentTab.parentElement.nextElementSibling.querySelector("a"));
             }
         }
-    
+
         function switchTab(newTab) {
             const activePanelId = newTab.getAttribute("href");
             const activePanel = tabsContainer.querySelector(activePanelId);
-    
+
             tabButtons.forEach((button) => {
                 button.setAttribute("aria-selected", false);
                 button.setAttribute("tabindex", "-1");
             });
-    
+
             tabPanels.forEach((panel) => {
                 panel.setAttribute("hidden", true);
             });
-    
+
             activePanel.removeAttribute("hidden", false);
-    
+
             newTab.setAttribute("aria-selected", true);
             newTab.setAttribute("tabindex", "0");
             newTab.focus();
         }
-    
+
         const ctaButton = document.createElement('a');
         ctaButton.textContent = 'Hit me up!';
         ctaButton.classList.add('cta-button');
         ctaButton.addEventListener('click', clearAboutSection);
         aboutTextContent.appendChild(ctaButton);
-    
+
         content.appendChild(aboutTextContent);
-    
+
         section.appendChild(content);
-    
+
         document.body.appendChild(section);
-    
+
         function clearAboutSection() {
             const timeline = gsap.timeline();
 
-            
-    
+
+
             // Select the "About Us" section element
             const aboutSection = section
             const heroSection = document.querySelector('.hero');
             const projectsContent = document.querySelector('.projects-section');
             const projectsSection = document.querySelector('#root');
             console.log("clicked")
-            
+
             if (heroSection) {
                 heroSection.remove();
             }
@@ -662,7 +659,7 @@
             aboutSection.remove();
             addContactUsSection();
         }
-        }
+    }
 
     function addProjectsSection() {
         const projectsData = [{
@@ -730,8 +727,7 @@
         projectText.appendChild(paragraph);
 
         // Create the link element
-        const link = document.createElement('a');
-        link.href = '';
+        const link = document.createElement('div');
         link.textContent = 'Visit my resume';
         link.addEventListener('click', function () {
             removeProjectsSection();
@@ -822,6 +818,9 @@
             const cardTitle = document.createElement("div");
             cardTitle.classList.add("card-title");
             cardTitle.innerHTML = `<a href="https://github.com/jonnfrancis" target="_blank"><span class="title-text">${project.title}</span></a>`;
+            cardTitle.addEventListener('click', function () {
+                window.open('https://github.com/jonnfrancis', '_blank');
+            });
 
             // Append the card text elements to the card
             card.appendChild(cardSubtitle);
@@ -1194,6 +1193,7 @@
             tl.to(".navbar", {
                     width: "100%",
                     borderRadius: "0",
+                    y: 20,
                     opacity: 1,
                     duration: 0.5,
                     ease: "power2.out",
@@ -1215,11 +1215,12 @@
                     ease: "power2.out",
                     onComplete: () => {
                         resumeSection.remove();
+                        location.replace(location.href);
                     },
                 });
 
-            // Call addProjectsSection to bring back the projects section
-            addAboutMeSection();
+
+
         }
 
     }
@@ -1383,6 +1384,17 @@
             const email = document.getElementById('email').value;
             const phone = document.getElementById('message').value;
             const findUs = document.getElementById('find-us-dropdown').value;
+
+            if (!name || !email || !phone || !findUs) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            const emailRegex = /^\S+@\S+\.\S+$/;
+            if (!emailRegex.test(email)) {
+                alert('Invalid email format.');
+                return;
+            }
 
             // Create a reference to the Firebase database
             const database = firebase.database().ref('contacts');
