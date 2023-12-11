@@ -445,11 +445,11 @@
 
         const aboutMeParagraph = document.createElement('p');
         aboutMeParagraph.textContent =
-            'John Francis, a web developer and UI designer, offers expertise in crafting impactful digital experiences. By combining cutting-edge technologies with creative design solutions, he delivers engaging websites and user interfaces that captivate your audience.';
+            'Meet John Francis, an experienced Web developer specializing in modern web applications and code projects. With a background in sales, marketing, UI design, SEO, and web frameworks, John brings a mindful and competitive approach to web development.';
         aboutMeSection.appendChild(aboutMeParagraph);
 
         const contactParagraph = document.createElement('p');
-        contactParagraph.textContent = 'Feel free to reach out to me for any specific queries.';
+        contactParagraph.textContent = 'Explore the possibilities with John by reaching out below.';
         aboutMeSection.appendChild(contactParagraph);
 
         advertisingPanel.appendChild(aboutMeSection);
@@ -677,8 +677,14 @@
                 title: "Project Movie",
                 tags: ["#movies", "#landing", "#series"]
             },
+            ,
             {
                 id: 4,
+                title: "Project ViteVocab",
+                tags: ["#new", "#vocabulary", "#fast"]
+            },
+            {
+                id: 5,
                 title: "All Projects",
                 tags: ["#modern", "#ui", "#web"]
             }
@@ -1294,18 +1300,7 @@
         const locationDiv = createContactInfoItem('Location', 'Nairobi, Kenya', 'bx bx-map');
         contactInfoSection.appendChild(locationDiv);
 
-        // Social Media
-        const socialMediaDiv = document.createElement('div');
-        socialMediaDiv.classList.add('contact-social-media');
-
-        const facebookLink = createSocialMediaLink('Facebook', 'https://facebook.com', 'bx bxl-facebook');
-        socialMediaDiv.appendChild(facebookLink);
-
-        const twitterLink = createSocialMediaLink('Twitter', 'https://github.com/jonnfrancis', 'bx bxl-github');
-        socialMediaDiv.appendChild(twitterLink);
-
-        const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com/designed.by_.jf', 'bx bxl-instagram');
-        socialMediaDiv.appendChild(instagramLink);
+        
 
         contactInfoSection.appendChild(socialMediaDiv);
 
