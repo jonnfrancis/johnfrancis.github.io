@@ -589,7 +589,7 @@ img {
 }
 
 [role="tabpanel"]>div {
-  background: var(--clr-primary-800);
+  background: #025087;
   padding: 1.25rem;
   margin-block: .75rem;
   border-radius: 0.625rem;
@@ -650,8 +650,8 @@ img {
   border-radius: 6rem;
   object-fit: cover;
   margin-left: auto;
+  margin-top: 2rem;
   margin-right: auto;
-  filter: grayscale(100%);
   grid-area: profile;
   pointer-events: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -668,11 +668,6 @@ img {
   pointer-events: none;
   width: min(50rem, 100% - 2rem);
 }
-
-/* .about-section .about-text .highlight {
-  font-weight: bold;
-  color: #3071E7;
-} */
 
 .about-section .cta-button {
   display: flex;
@@ -744,44 +739,6 @@ img {
   color: var(--clr-primary-200);
 }
 
-
-.chat-box {
-  background: linear-gradient(180deg, rgba(48, 113, 231, 0.25) 0%, #080C25 100%);
-  color: var(--clr-nueutral-100);
-  padding: 0.75rem;
-  border-radius: 4px;
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  align-items: center;
-  opacity: 1;
-}
-
-.chat-box .message {
-  font-size: 0.9rem;
-  padding: 0.25rem 0.5rem;
-}
-
-.chat-box .icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 0.5rem;
-}
-
-.chat-box:nth-of-type(1) .icon {
-  background-image: url("https://images.pexels.com/photos/590037/pexels-photo-590037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  background-size: cover;
-}
-
-.chat-box:nth-of-type(2) .icon {
-  background-image: url("https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=600");
-  background-size: cover;
-}
-
-.chat-box:nth-of-type(3) .icon {
-  background-image: url("https://images.pexels.com/photos/883757/pexels-photo-883757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  background-size: cover;
-}
-
 #content-marketing>h2 {
   font-size: var(--fs-400);
   font-weight: var(--fw-semi-bold);
@@ -811,13 +768,10 @@ img {
     padding: 1rem;
     height: 100vh;
   }
-  .chat-box {
-    opacity: 0;
-  }
 
   .about-section .profile-picture {
     width: 100%;
-    border-radius: 1.5rem;
+    border-radius: 50%;
   }
 
   .about-section .catchy-text {
@@ -1062,7 +1016,6 @@ img {
 
   .projects-title {
     text-align: left;
-    font-size: 4rem;
   }
 
   .projects-container {
@@ -1249,9 +1202,12 @@ aside {
 }
 
 .intro {
-  font-size: var(--fs-500);
-  max-width: 45ch;
+  font-size: var(--fs-400);
+  max-width: 50%;
+  margin-bottom: 2rem;
+  line-height: 1.6;
   text-align: justify;
+  font-family: var(--ff-gd);
 }
 
 .job-experience {
@@ -1290,7 +1246,7 @@ aside {
 }
 
 .job:first-child::before {
-  content: " Latest Course";
+  content: " Ongoing Course";
   position: absolute;
   color: var(--clr-accent-400);
   top: 0;
@@ -1352,6 +1308,46 @@ aside {
   border-radius: 50%;
   outline: .5rem solid var(--clr-primary-400);
   background: var(--clr-nuetral-100);
+}
+
+@media (max-width : 640px) {
+  main {
+    width: min(50rem, 100% - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+  aside {}
+  .resume-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .resume-section .icon-list {
+    grid-template-columns: 1fr 1fr;
+    width: min(50rem, 100% - 2rem);
+  }
+  .icon-list>li {
+    --_size: 0.3rem;
+  }
+  .back-button {
+    top: 1rem;
+    left: 80%;
+    width: 48px;
+  }
+  .job {
+    width: 20rem;
+  }
+  .job-info {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .year { 
+    text-align: right;
+  }
+  .intro { 
+    max-width: 100%;
+  }
 }
 
 /*----------------------contact us section------------------------------------------*/

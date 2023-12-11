@@ -14,7 +14,7 @@
     };
     firebase.initializeApp(firebaseConfig)
 
-    
+
     addHeroSection()
     addAboutMeSection()
     addProjectsSection()
@@ -217,8 +217,21 @@
 
         function removeHeroSection() {
             const heroSection = document.querySelector('.hero');
+            const projectsContent = document.querySelector('.projects-section');
+            const projectsSection = document.querySelector('#root');
+            const aboutUs = document.querySelector('.about-section');
+
             if (heroSection) {
                 heroSection.remove();
+            }
+            if (projectsContent) {
+                projectsContent.remove();
+            }
+            if (projectsSection) {
+                projectsSection.remove();
+            }
+            if (aboutUs) {
+                aboutUs.remove();
             }
         }
 
@@ -239,7 +252,16 @@
             const heroSection = document.querySelector('.hero');
             heroSection.parentNode.removeChild(heroSection);
 
-            addAboutMeSection()
+            const projectsContent = document.querySelector('.projects-section');
+            projectsContent.parentNode.removeChild(projectsContent);
+
+            const projectsSection = document.querySelector('#root');
+            projectsSection.parentNode.removeChild(projectsSection);
+
+            const aboutUs = document.querySelector('.about-section');
+            aboutUs.parentNode.removeChild(aboutUs);
+
+            addResumeSection()
 
         }
         // Function to animate and clear the screen
@@ -300,9 +322,6 @@
                 aboutUs.parentNode.removeChild(aboutUs);
             }
 
-
-
-
         }
     }
 
@@ -314,12 +333,11 @@
         const content = document.createElement('div');
         content.classList.add('about-content');
 
-        const backgroundImage = `url('./Projects/about-bg.jpg')`;
+        const backgroundImage = 'url(./Projects/about-bg.jpg)';
         section.style.backgroundImage = backgroundImage;
 
         const profilePicture = document.createElement('img');
-        profilePicture.src = './Projects/John.jpg';
-        profilePicture.alt = "John Francis - Web Developer and UI Designer | Profile Picture"
+        profilePicture.src = './Projects/profile-pic.png';
         profilePicture.classList.add('profile-picture');
         content.appendChild(profilePicture);
 
@@ -334,33 +352,35 @@
                     rotation: 45,
                     scale: 1.2,
                     opacity: 0,
-                    duration: 0.6,
+                    duration: 0.8,
                     ease: 'power3.out'
                 })
                 .to(catchyText, {
                     y: '-50',
                     opacity: 0,
-                    duration: 0.5,
+                    duration: 0.6,
                     ease: 'power3.out'
-                }, '-=0.5')
+                }, '-=0.6')
                 .to(aboutTextContent, {
                     y: '-30',
                     opacity: 0,
-                    duration: 0.5,
+                    duration: 0.6,
                     ease: 'power3.out'
-                }, '-=0.5')
+                }, '-=0.6')
                 .to(ctaButton, {
                     y: '30',
                     opacity: 0,
-                    duration: 0.5,
+                    duration: 0.6,
                     ease: 'power3.out'
-                }, '-=0.5');
+                }, '-=0.6');
 
             // After animating out the elements, bring back the hero section
             tl.call(() => {
+                // Remove the about section from the DOM
                 section.remove();
 
-                location.replace(location.href);
+                // Call the function to animate the hero section
+                addProjectsSection();
             });
         });
 
@@ -395,7 +415,7 @@
         const tab2Link = document.createElement('a');
         tab2Link.id = 'tab-2';
         tab2Link.href = '#social-media';
-        tab2Link.textContent = 'Experience';
+        tab2Link.textContent = 'Bio';
         tab2.appendChild(tab2Link);
         tabsList.appendChild(tab2);
 
@@ -403,7 +423,7 @@
         const tab3Link = document.createElement('a');
         tab3Link.id = 'tab-3';
         tab3Link.href = '#content-marketing';
-        tab3Link.textContent = 'Reviews';
+        tab3Link.textContent = 'Experience';
         tab3.appendChild(tab3Link);
         tabsList.appendChild(tab3);
 
@@ -425,11 +445,11 @@
 
         const aboutMeParagraph = document.createElement('p');
         aboutMeParagraph.textContent =
-            'Meet John Francis, an experienced Web developer specializing in modern web applications and code projects. With a background in sales, marketing, UI design, SEO, and web frameworks, John brings a mindful and competitive approach to web development.';
+            'John Francis, a web developer and UI designer, offers expertise in crafting impactful digital experiences. By combining cutting-edge technologies with creative design solutions, he delivers engaging websites and user interfaces that captivate your audience.';
         aboutMeSection.appendChild(aboutMeParagraph);
 
         const contactParagraph = document.createElement('p');
-        contactParagraph.textContent = 'Explore the possibilities with John by reaching out below.';
+        contactParagraph.textContent = 'Feel free to reach out to me for any specific queries.';
         aboutMeSection.appendChild(contactParagraph);
 
         advertisingPanel.appendChild(aboutMeSection);
@@ -477,6 +497,12 @@
         experiencePanel.appendChild(bioPanel);
         tabsPanels.appendChild(advertisingPanel);
 
+        tabsPanels.appendChild(experiencePanel);
+
+        const reviewsPanel = document.createElement('div');
+        reviewsPanel.id = 'content-marketing';
+        reviewsPanel.setAttribute('aria-labelledby', 'tab-3');
+
         const expPanel = document.createElement('div');
 
         const experienceTitle = document.createElement('h2');
@@ -486,55 +512,25 @@
 
         const experienceList = document.createElement('ul');
         experienceList.innerHTML = `
-        <li class="experience-item">
-        <p class="experiences-title">Front End<span class="experiences-span">@tripplesee | 2022</span></p>
-        </li>
-        <li class="experience-item">
-        <p class="experiences-title">Consultant <span class="experiences-span">@ILEPA | 2023</span></p>
-        </li>
-    `;
+            <li class="experience-item">
+            <p class="experiences-title">Front End<span class="experiences-span">@tripplesee | 2022</span></p>
+            </li>
+            <li class="experience-item">
+            <p class="experiences-title">Consultant <span class="experiences-span">@Ilepa | 2023</span></p>
+            </li>
+        `;
         expPanel.appendChild(experienceList)
-        experiencePanel.appendChild(expPanel);
+        reviewsPanel.appendChild(expPanel);
 
-        tabsPanels.appendChild(experiencePanel);
-
-        const reviewsPanel = document.createElement('div');
-        reviewsPanel.id = 'content-marketing';
-        reviewsPanel.setAttribute('aria-labelledby', 'tab-3');
-
-        const reviewsTitle = document.createElement('h2');
+        const reviewsTitle = document.createElement('div');
         reviewsTitle.textContent = 'Reviews';
         reviewsPanel.appendChild(reviewsTitle);
-
-        const review1 = createChatBox('Impressive skills!');
-        const review2 = createChatBox('Innovative websites!');
-        const review3 = createChatBox('Stunning designs!');
-
-        reviewsPanel.appendChild(review1);
-        reviewsPanel.appendChild(review2);
-        reviewsPanel.appendChild(review3);
 
         tabsPanels.appendChild(reviewsPanel);
 
         tabsContainer.appendChild(tabsPanels);
         tabsWrapper.appendChild(tabsContainer);
         aboutTextContent.appendChild(tabsWrapper)
-
-        function createChatBox(message) {
-            const chatBox = document.createElement('div');
-            chatBox.classList.add('chat-box');
-
-            const icon = document.createElement('div');
-            icon.classList.add('icon');
-            chatBox.appendChild(icon);
-
-            const messageText = document.createElement('div');
-            messageText.classList.add('message');
-            messageText.textContent = message;
-            chatBox.appendChild(messageText);
-
-            return chatBox;
-        }
 
         const tabButtons = tabsList.querySelectorAll("a");
         const tabPanels = tabsContainer.querySelectorAll(".tabs__panels > div");
@@ -628,7 +624,7 @@
         }
 
         const ctaButton = document.createElement('a');
-        ctaButton.textContent = 'Hit Me Up!';
+        ctaButton.textContent = 'Hit me up!';
         ctaButton.classList.add('cta-button');
         ctaButton.addEventListener('click', clearAboutSection);
         aboutTextContent.appendChild(ctaButton);
@@ -642,51 +638,25 @@
         function clearAboutSection() {
             const timeline = gsap.timeline();
 
+
+
             // Select the "About Us" section element
             const aboutSection = section
-            const projectsSection = document.querySelector('#root');
             const heroSection = document.querySelector('.hero');
+            const projectsContent = document.querySelector('.projects-section');
+            const projectsSection = document.querySelector('#root');
+            console.log("clicked")
 
-            // Create a wrapper element to hold the animated elements
-            const wrapper = document.createElement('div');
-            wrapper.classList.add('about-clear-animation');
-            aboutSection.appendChild(wrapper);
-
-            // Get the elements to animate
-            const elements = aboutSection.querySelectorAll('.about-content > *');
-
-            // Reverse the order of the elements
-            const reversedElements = [...elements].reverse();
-
-            // Set initial positions for the elements
-            gsap.set(elements, {
-                opacity: 1,
-                y: 0
-            });
-
-            // Add animations to remove elements one by one
-            reversedElements.forEach((element, index) => {
-                timeline.to(element, {
-                    opacity: 0,
-                    y: -20,
-                    duration: 0.3,
-                    delay: index * 0.1
-                }, 'start');
-            });
-
-            // Animate the wrapper element to fade out the entire section
-            timeline.to(wrapper, {
-                    opacity: 0,
-                    duration: 0.3
-                }, '-=0.3')
-                .call(removeAboutSection);
-
-            function removeAboutSection() {
-                // Remove the "About Us" section from the DOM
-                heroSection.remove()
-                aboutSection.remove();
-                projectsSection.remove()
+            if (heroSection) {
+                heroSection.remove();
             }
+            if (projectsContent) {
+                projectsContent.remove();
+            }
+            if (projectsSection) {
+                projectsSection.remove();
+            }
+            aboutSection.remove();
             addContactUsSection();
         }
     }
@@ -757,8 +727,7 @@
         projectText.appendChild(paragraph);
 
         // Create the link element
-        const link = document.createElement('a');
-        link.href = '';
+        const link = document.createElement('div');
         link.textContent = 'Visit my resume';
         link.addEventListener('click', function () {
             removeProjectsSection();
@@ -772,7 +741,7 @@
         section.appendChild(projectsContainer);
 
         const scrollDown = document.createElement('div');
-        scrollDown.textContent = "Scroll Down"
+        scrollDown.textContent = "Keep Scrolling"
         scrollDown.classList.add('scroll-down');
 
         const arrow = document.createElement('div');
@@ -849,6 +818,9 @@
             const cardTitle = document.createElement("div");
             cardTitle.classList.add("card-title");
             cardTitle.innerHTML = `<a href="https://github.com/jonnfrancis" target="_blank"><span class="title-text">${project.title}</span></a>`;
+            cardTitle.addEventListener('click', function () {
+                window.open('https://github.com/jonnfrancis', '_blank');
+            });
 
             // Append the card text elements to the card
             card.appendChild(cardSubtitle);
@@ -958,11 +930,12 @@
 
 
         function removeProjectsSection() {
-            // Select the necessary elements
-            const projectsSection = document.querySelector('.projects-section');
-            const projectsLink = document.querySelector('.projects-link');
+            const heroSection = document.querySelector('.hero');
+            const projectsContent = document.querySelector('.projects-section');
+            const projectsSection = document.querySelector('#root');
+            const aboutUs = document.querySelector('.about-section');
 
-            // Animate the removal of elements
+
             gsap.timeline()
                 .to(projectsSection, {
                     rotationX: -90,
@@ -972,10 +945,20 @@
                 });
 
             function removeSection() {
-                // Remove the projects section from the DOM
                 rootContainer.remove();
 
-                // Call the addResumeSection function
+                if (heroSection) {
+                    heroSection.remove();
+                }
+                if (projectsContent) {
+                    projectsContent.remove();
+                }
+                if (projectsSection) {
+                    projectsSection.remove();
+                }
+                if (aboutUs) {
+                    aboutUs.remove();
+                }
             }
 
         }
@@ -1043,10 +1026,9 @@
             ease: "power2.out",
         });
 
-        const name = "John Francis"
         const intro = document.createElement("p");
         intro.classList.add("intro");
-        intro.textContent = `Hi, I'm ${name}, I'm passionate about building innovative solutions that deliver seamless user experiences.`;
+        intro.innerHTML = `Enthusiastic about coding since 2020, I embarked on my journey with short courses, progressively advancing to complete two online courses from Harvard University via edX.<br> By 2021, I proudly earned certification as a proficient web developer, specializing in Python and JavaScript.<br>My expertise extends to crafting modern, sleek, and responsive web projects and applications.`;
         main.appendChild(intro);
 
         gsap.from(intro, {
@@ -1061,6 +1043,12 @@
         jobExperience.classList.add("job-experience");
 
         const jobsData = [{
+                year: "2023",
+                certificate: "Introduction to AI",
+                institution: "HarvardX",
+                info: "This course explores the concepts and algorithms at the foundation of modern artificial intelligence",
+            },
+            {
                 year: "2022",
                 certificate: "React",
                 institution: "Free Code Camp",
@@ -1205,6 +1193,7 @@
             tl.to(".navbar", {
                     width: "100%",
                     borderRadius: "0",
+                    y: 20,
                     opacity: 1,
                     duration: 0.5,
                     ease: "power2.out",
@@ -1226,11 +1215,12 @@
                     ease: "power2.out",
                     onComplete: () => {
                         resumeSection.remove();
+                        location.replace(location.href);
                     },
                 });
 
-            // Call addProjectsSection to bring back the projects section
-            addAboutMeSection();
+
+
         }
 
     }
@@ -1250,12 +1240,22 @@
         const container = document.createElement('div');
         container.classList.add('contact-container');
 
-        const iconElement = document.createElement("i");
-        iconElement.className = "bx bx-arrow-back back-main";
-        iconElement.addEventListener('click', () => {
+        const backButton = document.createElement("div");
+        backButton.classList.add("back-button");
+        backButton.innerHTML = '<i class="bx bx-left-arrow-alt icon"></i>';
+        backButton.addEventListener('click', () => {
             location.replace(location.href);
         });
-        container.appendChild(iconElement);
+        container.appendChild(backButton);
+
+        // Create the GSAP animation for the back arrow icon
+        gsap.to(backButton.querySelector(".icon"), {
+            x: -10,
+            repeat: -1,
+            yoyo: true,
+            duration: 0.5,
+            ease: "power1.inOut",
+        });
 
         // Div for title and p
         const titleWrapper = document.createElement('div');
@@ -1384,6 +1384,17 @@
             const email = document.getElementById('email').value;
             const phone = document.getElementById('message').value;
             const findUs = document.getElementById('find-us-dropdown').value;
+
+            if (!name || !email || !phone || !findUs) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            const emailRegex = /^\S+@\S+\.\S+$/;
+            if (!emailRegex.test(email)) {
+                alert('Invalid email format.');
+                return;
+            }
 
             // Create a reference to the Firebase database
             const database = firebase.database().ref('contacts');
