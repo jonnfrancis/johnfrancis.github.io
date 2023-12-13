@@ -62,14 +62,13 @@ img {
   display: block;
 }
 
-/* Original navbar styling */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: rgba(17, 24, 47, 0.3);
-  color: #fff;
+  color: var(--clr-neutral-100);
   padding: 10px;
   text-align: left;
   padding-left: 1rem;
@@ -133,8 +132,8 @@ img {
 
 .navbar ul li {
   margin-left: 1rem;
-  font-size: 16px;
-  color: #fff;
+  font-size: var(--fs-300);
+  color: var(--clr-neutral-100);
   position: relative;
   cursor: pointer;
   transition: color 0.3s;
@@ -153,23 +152,23 @@ img {
 }
 
 .navbar ul li:hover::after {
-  background-color: #A6B2EC;
+  background-color: var(--clr-accent-400);
   bottom: -4px;
 }
 
 .navbar a {
-  color: #fff;
+  color: var(--clr-neutral-100);
   text-decoration: none;
   padding: 5px;
   font-size: var(--fs-400);
 }
 
 .navbar a:hover {
-  color: #A6B2EC;
+  color: var(--clr-accent-400);
 }
 
 .navbar .cta-button {
-  background-color: #3071E7;
+  background-color: var(--clr-secondary-400);
   padding: 8px 16px;
   border-radius: 4px;
   font-size: var(--fs-400);
@@ -178,12 +177,11 @@ img {
 }
 
 .navbar .cta-button:hover {
-  color: #161e35;
+  background-color: var(--clr-primary-400);
+  color: var(--clr-accent-400);
 }
 
-/* CSS for devices with a screen size of 640px and above */
 @media (min-width: 768px) {
-
   .name-container,
   .greetings,
   .mobile-header,
@@ -196,7 +194,6 @@ img {
 }
 
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .navbar {
     padding: 2rem;
@@ -231,12 +228,9 @@ img {
   height: 100%;
   justify-content: center;
   align-items: end;
-  /* Set the hero content height to cover the viewport */
   background: rgba(0, 0, 0, 0.2);
-  /* Glass morphism background */
   backdrop-filter: blur(10px);
   position: relative;
-  /* Position relative for the blobs */
 }
 
 .hero-illustration {
@@ -259,8 +253,7 @@ img {
 
 .hero h1 {
   font-size: var(--fs-700);
-  font-family: 'EB Garamond', serif;
-  /* Google Font */
+  font-family: var(--ff-gd);
   font-weight: var(--fw-bold);
   text-transform: capitalize;
 }
@@ -272,7 +265,7 @@ img {
 
 .mask p {
   font-size: var(--fs-500);
-  font-family: 'EB Garamond', serif;
+  font-family: var(--ff-gd);
   color: var(--clr-nuetral-100);
   text-align: right;
 }
@@ -280,8 +273,8 @@ img {
 .cta-button {
   font-size: var(--fs-500);
   padding: 0.75rem 1.5rem;
-  background-color: #3071E7;
-  color: #fff;
+  background-color: var(--clr-secondary-400);
+  color: var(--clr-neutral-100);
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s;
@@ -289,7 +282,7 @@ img {
 
 .cta-button:hover {
   color: #161E35;
-  background-color: #fff;
+  background-color: var(--clr-primary-100);
 }
 
 
@@ -297,20 +290,13 @@ img {
 .blob {
   position: absolute;
   width: 200px;
-  /* Adjust size as needed */
   height: 200px;
-  /* Adjust size as needed */
   border-radius: 50%;
   background-color: #3071E7B5;
-  /* Blob color using the primary color */
   opacity: 0.5;
-  /* Adjust opacity as needed */
   filter: blur(40px);
-  /* Blur effect */
   z-index: -1;
-  /* Move blobs behind the content */
   transform: scale(0);
-  /* Start with zero scale */
 }
 
 .blob1 {
@@ -464,7 +450,6 @@ img {
     display: block;
     line-height: 150%;
     text-align: center;
-    /* or 24px */
     color: var(--clr-nueutral-200);
   }
 
@@ -516,7 +501,7 @@ img {
     justify-content: center;
     font-size: var(--fs-300);
     border-radius: 15px;
-    background: #3071E7;
+    background: var(--clr-secondary-400);
     padding: .75rem 1rem;
     max-width: 12ch;
     margin-right: auto;
@@ -675,8 +660,8 @@ img {
   width: min(50rem, 100% - 2rem);
   margin-inline: auto;
   background-color: #3071E7;
-  color: #fff;
-  font-size: 16px;
+  color: var(--clr-nuetral-100);
+  font-size: var(--fs-300);
   font-weight: var(--fw-semi-bold);
   text-decoration: none;
   border-radius: 5px;
@@ -827,7 +812,7 @@ img {
   font-size: var(--fs-700);
   font-weight: bold;
   margin-block: 1rem;
-  color: #FFF;
+  color: var(--clr-neutral-100);
   letter-spacing: 0.16rem;
 }
 
@@ -864,7 +849,7 @@ img {
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 0.5rem;
-  background: #1756C7;
+  background: var(--clr-secondary-400);
   box-shadow: 0px 4px 20.2px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -900,7 +885,7 @@ img {
   width: 130px;
   height: 100px;
   backdrop-filter: blur(10px);
-  font-family: 'EB Garamond', serif;
+  font-family: var(--ff-gd);
   background-color: var(--clr-primary-400);
   padding: .75rem;
   text-align: center;
@@ -937,9 +922,18 @@ img {
   left: 10px;
 }
 
+.projects-section .label {
+  display: none;
+}
+
+.projects-section .contact-social-media {
+  padding-block: 2rem;
+  padding-left: .5rem;
+}
+
 .card-title .title-text {
   border-radius: 2.1875rem;
-  border: 2px solid #3071E7;
+  border: 2px solid var(--clr-accent-400);
   padding-block: 1.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -955,7 +949,7 @@ img {
 
 .projects-header {
   font-size: 14rem;
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', var(--ff-base);
   position: fixed;
   left: 50%;
   top: 50%;
@@ -1105,6 +1099,15 @@ img {
 
   .projects-section .cta-button:hover {
     background-color: var(--clr-primary-400);
+  }
+
+  .projects-section .contact-social-media {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+    transform: translateY(-45vh);
+    margin-right: 2rem;
   }
 
   .projects-section .scroll-down {
@@ -1268,7 +1271,7 @@ aside {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 
 .role {
@@ -1317,7 +1320,7 @@ aside {
     margin-right: auto;
     margin-top: 2rem;
   }
-  aside {}
+
   .resume-section {
     display: flex;
     flex-direction: column;
@@ -1449,7 +1452,7 @@ aside {
 
 .contact-social-media a:hover {
   color: var(--clr-nuetral-100);
-  background-color: var(--clr-primary-300);
+  background-color: var(--clr-primary-400);
 }
 
 /* Feedback Section */
@@ -1576,7 +1579,7 @@ select::-ms-expand {
 .contact-feedback-submit:hover {
   background-color: var(--clr-primary-400);
   color: var(--clr-nuetral-100);
-  border-bottom: 2px solid #3071E7;
+  border-bottom: 2px solid var(--clr-secondary-400);
 }
 
 .alert {

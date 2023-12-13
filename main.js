@@ -681,7 +681,7 @@
             {
                 id: 4,
                 title: "Project ViteVocab",
-                tags: ["#new", "#vocabulary", "#fast"]
+                tags: ["#2023", "#vocabulary", "#learn"]
             },
             {
                 id: 5,
@@ -714,27 +714,23 @@
         const projectText = document.createElement('div');
         projectText.classList.add('projects-text');
 
-        // Create the title element
         const projectsP = document.createElement('p');
         projectsP.textContent = 'Innovate. Inspire. Impress.';
         projectsP.classList.add('projects-P');
         projectText.appendChild(projectsP);
 
-        // Create the title element
         const title = document.createElement('h2');
         title.textContent = 'Innovations Gallery -  My Web  Projects';
         title.classList.add('projects-title');
         projectText.appendChild(title);
 
-        // Create the paragraph element
         const paragraph = document.createElement('p');
         paragraph.textContent = 'Find my best projects below!';
         paragraph.classList.add('projects-paragraph');
         projectText.appendChild(paragraph);
 
-        // Create the link element
         const link = document.createElement('div');
-        link.textContent = 'Visit my resume';
+        link.textContent = 'Visit my resumè';
         link.addEventListener('click', function () {
             removeProjectsSection();
             addResumeSection();
@@ -745,6 +741,20 @@
         projectsContainer.appendChild(projectText);
 
         section.appendChild(projectsContainer);
+
+        const socialMediaDiv = document.createElement('div');
+        socialMediaDiv.classList.add('contact-social-media');
+
+        const linkedInLink = createSocialMediaLink('Linkedin', 'https://linkedin.com/in/john-francis-732259211', 'bx bxl-linkedin');
+        socialMediaDiv.appendChild(linkedInLink);
+
+        const twitterLink = createSocialMediaLink('Twitter', 'https://github.com/jonnfrancis', 'bx bxl-github');
+        socialMediaDiv.appendChild(twitterLink);
+
+        const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com/johnfrancis.dev', 'bx bxl-instagram');
+        socialMediaDiv.appendChild(instagramLink);
+
+        section.appendChild(socialMediaDiv);
 
         const scrollDown = document.createElement('div');
         scrollDown.textContent = "Keep Scrolling"
@@ -1300,7 +1310,18 @@
         const locationDiv = createContactInfoItem('Location', 'Nairobi, Kenya', 'bx bx-map');
         contactInfoSection.appendChild(locationDiv);
 
-        
+        // Social Media
+        const socialMediaDiv = document.createElement('div');
+        socialMediaDiv.classList.add('contact-social-media');
+
+        const linkedInLink = createSocialMediaLink('Linkedin', 'https://linkedin.com/in/john-francis-732259211', 'bx bxl-linkedin');
+        socialMediaDiv.appendChild(linkedInLink);
+
+        const twitterLink = createSocialMediaLink('Twitter', 'https://github.com/jonnfrancis', 'bx bxl-github');
+        socialMediaDiv.appendChild(twitterLink);
+
+        const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com/johnfrancis.dev', 'bx bxl-instagram');
+        socialMediaDiv.appendChild(instagramLink);
 
         contactInfoSection.appendChild(socialMediaDiv);
 
@@ -1478,7 +1499,8 @@
     // Helper function to create social media links
     function createSocialMediaLink(labelText, url, iconClass) {
         const link = document.createElement('a');
-        link.setAttribute('href', url);
+        link.href = url;
+        link.target = '_blank';
 
         const icon = document.createElement('i');
         icon.classList.add(...iconClass.split(" "));
