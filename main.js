@@ -1031,7 +1031,7 @@
 
         const pageTitle = document.createElement("h1");
         pageTitle.classList.add("page-title");
-        pageTitle.textContent = "My Resume";
+        pageTitle.textContent = "My Resumè";
         main.appendChild(pageTitle);
 
         gsap.from(pageTitle, {
