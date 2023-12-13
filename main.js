@@ -1317,7 +1317,7 @@
         const linkedInLink = createSocialMediaLink('Linkedin', 'https://linkedin.com/in/john-francis-732259211', 'bx bxl-linkedin');
         socialMediaDiv.appendChild(linkedInLink);
 
-        const twitterLink = createSocialMediaLink('Twitter', 'https://github.com/jonnfrancis', 'bx bxl-github');
+        const twitterLink = createSocialMediaLink('Github', 'https://github.com/jonnfrancis', 'bx bxl-github');
         socialMediaDiv.appendChild(twitterLink);
 
         const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com/johnfrancis.dev', 'bx bxl-instagram');
