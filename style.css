@@ -282,7 +282,7 @@ img {
 
 .cta-button:hover {
   color: #161E35;
-  background-color: var(--clr-primary-100);
+  background-color: var(--clr-accent-400);
 }
 
 
@@ -669,6 +669,11 @@ img {
   transition: background-color 0.3s ease;
 }
 
+.about-section .cta-button:hover {
+  background-color: var(--clr-accent-400);
+  color: var(--clr-nuetral-100);
+}
+
 #social-media>div>div {
   display: flex;
   flex-direction: column;
@@ -854,7 +859,7 @@ img {
 }
 
 .projects-link:hover {
-  background-color: var(--clr-primary-400);
+  background-color: var(--clr-accent-400);
   color: var(--clr-neutral-100);
 }
 
@@ -1210,7 +1215,6 @@ aside {
   margin-bottom: 2rem;
   line-height: 1.6;
   text-align: justify;
-  font-family: var(--ff-gd);
 }
 
 .job-experience {
