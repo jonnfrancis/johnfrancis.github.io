@@ -14,6 +14,20 @@
     };
     firebase.initializeApp(firebaseConfig)
 
+    gsap.registerPlugin(ScrollTrigger);
+
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    })
+
+    function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
 
     addHeroSection()
     addAboutMeSection()
@@ -33,15 +47,14 @@
         // Animation for the hero section
         timeline.to('.hero', {
             opacity: 1,
-            duration: .25,
+            duration: .1,
             ease: 'power2.out'
         })
 
-        // Animation for the navbar
-        timeline.from('.navbar', {
-                y: -50,
-                opacity: 0,
-                duration: 0.8,
+        timeline.to('.navbar', {
+                // y: 50,
+                opacity: 1,
+                duration: 0.2,
                 ease: 'power2.out'
             })
             .from('.navbar ul li', {
@@ -49,21 +62,22 @@
                 opacity: 0,
                 duration: 0.6,
                 stagger: 0.2,
-                ease: 'power2.out'
+                ease: 'power1.out'
             }, "-=.6")
             .from('.navbar .cta-button', {
                 y: -20,
                 opacity: 0,
-                duration: 0.6,
+                duration: 0.2,
                 ease: 'power2.out'
-            }, "-=.4");
+            }, "-=.2");
 
-        // Animation for the hero illustration
-        timeline.to('.hero-illustration', {
-            clipPath: 'polygon(0 0, 100% 0, 100% 99%, 0 99%)',
-            scale: 1,
-            duration: 1.4
-        }).from('.hero-content', {
+        // timeline.to('.hero-illustration', {
+        //     clipPath: 'polygon(0 0, 100% 0, 100% 99%, 0 99%)',
+        //     scale: 1,
+        //     duration: 1.4
+        // })
+        timeline.from(".grid-item", { y: 15, opacity: 0, duration: 0.5, stagger: 0.2, ease: "power3.in" })
+        .from('.hero-content', {
             height: 0,
             opacity: 0,
             duration: .8,
@@ -91,9 +105,6 @@
                 ease: 'power2.out'
             }, "-=.6");
 
-
-
-        // Animation for the blobs
         timeline.to(".blob", {
             duration: 2,
             scale: 1,
@@ -102,30 +113,25 @@
             delay: .5
         });
 
-
-        // Play the timeline
         timeline.play();
 
-
-        // Randomly position the blobs
         const blobs = document.querySelectorAll(".blob");
         blobs.forEach(blob => {
             blob.style.top = `${Math.random() * 100}vh`;
             blob.style.left = `${Math.random() * 50}vw`;
         });
-        // Select the elements
+
         const mobileNavbar = document.querySelector('.mobile-bottom-navbar');
         const xlNavbar = document.querySelector('.navbar-menu');
         const resume = xlNavbar.querySelector('#resume')
         const profile = xlNavbar.querySelector('#profile')
         const projo = xlNavbar.querySelector('#projects')
-        const bton = document.querySelector('#contact')
+        // const bton = document.querySelector('#contact')
         const briefcaseIcon = mobileNavbar.querySelector('.bx-briefcase-alt');
         const homeIcon = mobileNavbar.querySelector('.bx-home-alt');
         const boxIcon = mobileNavbar.querySelector('.bx-box');
 
 
-        // Add event listeners to the icons
         briefcaseIcon.addEventListener('click', () => {
             clearHeroSection(() => {
                 addResumeSection();
@@ -140,13 +146,12 @@
 
         boxIcon.addEventListener('click', () => {
             clearHeroSection(() => {
-                addProjectsSection();
+                addContactUsSection();
             });
         });
 
 
 
-        // Add event listeners to the icons
         resume.addEventListener('click', () => {
             clearHeroSection(() => {
                 addResumeSection();
@@ -155,64 +160,27 @@
 
         profile.addEventListener('click', () => {
             clearHeroSection(() => {
-                addAboutMeSection();
+                addContactUsSection();
             });
         });
 
         projo.addEventListener('click', () => {
             clearHeroSection(() => {
-                addProjectsSection();
+                addAboutMeSection();
             });
         });
-        bton.addEventListener('click', () => {
-            clearHeroSection(() => {
-                addContactUsSection();
-            });
-        });
+        // bton.addEventListener('click', () => {
+        //     clearHeroSection(() => {
+        //         addContactUsSection();
+        //     });
+        // });
 
         function clearHeroSection(callback) {
             const timeline = gsap.timeline({
                 onComplete: callback
             });
 
-            timeline.to('.group1', {
-                    x: '15%',
-                    opacity: 0,
-                    duration: 0.4
-                }, 'start')
-                .to('.group2', {
-                    x: '-15%',
-                    opacity: 0,
-                    duration: 0.4
-                }, 'start')
-                .to('.greetings', {
-                    y: '-40',
-                    opacity: 0,
-                    duration: 0.4
-                }, 'start')
-                .to('.mobile-hero-text', {
-                    y: '-80',
-                    opacity: 0,
-                    duration: 0.4
-                }, 'start')
-                .to('.mobile-hero-cta', {
-                    y: '-30',
-                    opacity: 0,
-                    duration: 0.4
-                }, 'start')
-                .to('.mobile-bottom-navbar ul li', {
-                    opacity: 0,
-                    duration: 0.2
-                }, 'start')
-                .to('.mobile-bottom-navbar', {
-                    width: 0,
-                    duration: 0.4
-                }, 'start')
-                .to('.mobile-container', {
-                    y: '-100%',
-                    duration: 0.6
-                }, )
-                .call(removeHeroSection);
+            timeline.call(removeHeroSection);
         }
 
         function removeHeroSection() {
@@ -327,6 +295,7 @@
 
 
     function addAboutMeSection() {
+        const heroSection = document.querySelector('.hero');
         const section = document.createElement('section');
         section.classList.add('about-section');
 
@@ -336,18 +305,22 @@
         const backgroundImage = 'url(./Projects/about-bg.jpg)';
         section.style.backgroundImage = backgroundImage;
 
+        const defaultSrc = './profile-picture.png';
+        const alternativeSrc = './Projects/profile.png';
+
         const profilePicture = document.createElement('img');
-        profilePicture.src = './Projects/profile-pic.png';
+        profilePicture.alt = 'A closeup of John Francis';
+        profilePicture.src = window.innerWidth <= 768 ? alternativeSrc : defaultSrc;;
+        profilePicture.loading = 'lazy';
         profilePicture.classList.add('profile-picture');
         content.appendChild(profilePicture);
 
         const iconElement = document.createElement("i");
-        iconElement.className = "bx bx-arrow-back back-main";
+        iconElement.className = heroSection ? "back-main" : "bx bx-arrow-back back-main";
         iconElement.addEventListener('click', () => {
             // Create a timeline for the animation
             const tl = gsap.timeline();
 
-            // Add animations to the timeline to animate out the elements
             tl.to(profilePicture, {
                     rotation: 45,
                     scale: 1.2,
@@ -374,13 +347,10 @@
                     ease: 'power3.out'
                 }, '-=0.6');
 
-            // After animating out the elements, bring back the hero section
             tl.call(() => {
-                // Remove the about section from the DOM
                 section.remove();
 
-                // Call the function to animate the hero section
-                addProjectsSection();
+                location.reload();
             });
         });
 
@@ -834,9 +804,6 @@
             const cardTitle = document.createElement("div");
             cardTitle.classList.add("card-title");
             cardTitle.innerHTML = `<a href="https://github.com/jonnfrancis" target="_blank"><span class="title-text">${project.title}</span></a>`;
-            cardTitle.addEventListener('click', function () {
-                window.open('https://github.com/jonnfrancis', '_blank');
-            });
 
             // Append the card text elements to the card
             card.appendChild(cardSubtitle);
@@ -847,7 +814,13 @@
 
         });
 
-        // Create the cta button
+        const ctaButton1 = document.createElement('a');
+        ctaButton1.href="https://github.com/jonnfrancis";
+        ctaButton1.textContent = 'All Projects';
+        ctaButton1.target = '_blank';
+        ctaButton1.classList.add('cta-button', 'projects-btn');
+        section.appendChild(ctaButton1);
+
         const ctaButton = document.createElement('a');
         ctaButton.addEventListener('click', function () {
             removeProjectsSection();
@@ -857,26 +830,9 @@
         ctaButton.classList.add('cta-button', 'contact-btn');
         section.appendChild(ctaButton);
 
-        // Append the projects section to the root container
         rootContainer.appendChild(section);
 
-        // Append the projects section to the body or another container element
         document.body.appendChild(rootContainer);
-
-        // Animate the projects section or add any additional functionality as needed
-        gsap.registerPlugin(ScrollTrigger);
-
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-        })
-
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-
-        requestAnimationFrame(raf)
 
         if (window.innerWidth >= 780) {
             gsap.timeline({
@@ -956,7 +912,7 @@
                 .to(projectsSection, {
                     rotationX: -90,
                     opacity: 0,
-                    duration: 0.2,
+                    duration: 0.1,
                     onComplete: removeSection
                 });
 
@@ -1061,25 +1017,25 @@
         const jobsData = [{
                 year: "2023",
                 certificate: "Introduction to AI",
-                institution: "HarvardX",
+                institution: "Harvard",
                 info: "This course explores the concepts and algorithms at the foundation of modern artificial intelligence",
             },
             {
                 year: "2022",
                 certificate: "React",
-                institution: "Free Code Camp",
+                institution: "Scrimba",
                 info: "A hands-on course that teaches the fundamentals of React Js, its usage, and building UI.",
             },
             {
                 year: "2021",
                 certificate: "Web Programming",
-                institution: "HarvardX",
+                institution: "Harvard",
                 info: "A comprehensive course on web programming, covering Python and JavaScript.",
             },
             {
                 year: "2020",
                 certificate: "Introduction to CS",
-                institution: "HarvardX",
+                institution: "Harvard",
                 info: "An introductory course providing an overview of computer science concepts and principles.",
             },
         ];
