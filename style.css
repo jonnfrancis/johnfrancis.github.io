@@ -74,7 +74,6 @@ img {
   padding-left: 1rem;
   padding-right: 1rem;
   z-index: 100;
-  opacity: 0;
 }
 
 .navbar-content {
@@ -217,7 +216,7 @@ img {
   grid-template-columns: 45% 1fr;
   margin: 0;
   overflow: hidden;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .hero-content {
