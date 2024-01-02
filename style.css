@@ -1622,7 +1622,7 @@ aside {
 .contact-info {
   margin-bottom: 40px;
   display: flex;
-  background-image: url("./Projects/dragon.jpg");
+  background-image: url("../Projects/dragon.jpg");
   background-repeat: no-repeat;
   background-position: 20% 0%;
   background-size: cover;
