@@ -314,7 +314,7 @@ img {
 .tile-2 .overlay {
   height: 100%;
   width: 100%;
-  background-image: url("./Projects/tile3.svg");
+  background-image: url('../Projects/tile3.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -345,7 +345,7 @@ img {
 
 .tile-3{
   grid-area: tile3;
-  background-image: url("./Projects/tile2.png");
+  background-image: url("../Projects/tile2.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -362,9 +362,9 @@ img {
   box-shadow: -5px 6px 5px 0px rgba(48, 113, 231, 0.25);
 }
 .tile-4 .overlay {
-  background-image: url("./Projects/tile-4.png");
+  background-image: url("../Projects/tile-4.png");
   background-repeat: no-repeat;
-  background-position: cover;
+  background-size: cover;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -418,7 +418,7 @@ img {
 
 .tile-6{
   grid-area: tile6;
-  background-image: url("./Projects/tile6-bg.svg");
+  background-image: url("../Projects/tile6-bg.svg");
   background-repeat: no-repeat;
   background-position: center right;
   border-radius: 60px;
