@@ -645,7 +645,7 @@
             ,
             {
                 id: 4,
-                title: "Project ViteVocab",
+                title: "Project VocabBoost",
                 tags: ["#2023", "#vocabulary", "#learn"]
             },
             {
