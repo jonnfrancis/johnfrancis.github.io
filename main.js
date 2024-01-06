@@ -168,6 +168,8 @@
         //     });
         // });
 
+        gsap.to('#mouse-down', {repeat: -1, y: -5, duration: .5, ease: Power2.out, yoyo: true})
+        
         function clearHeroSection(callback) {
             const timeline = gsap.timeline({
                 onComplete: callback
@@ -808,7 +810,7 @@
         });
 
         const ctaButton1 = document.createElement('a');
-        ctaButton1.href="https://github.com/jonnfrancis";
+        ctaButton1.href="https://github.com/jonnfrancis?tab=repositories";
         ctaButton1.textContent = 'All Projects';
         ctaButton1.target = '_blank';
         ctaButton1.classList.add('cta-button', 'projects-btn');

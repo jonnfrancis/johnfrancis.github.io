@@ -1446,6 +1446,11 @@ aside {
   text-align: justify;
 }
 
+.mouse {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .job-experience {
   display: grid;
   position: relative;
