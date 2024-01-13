@@ -1282,7 +1282,7 @@ img {
   }
 
   .project-card {
-    border-radius: 0;
+    border-radius: 7px;
     background-position: center center;
   }
 
@@ -1475,6 +1475,22 @@ aside {
   border-radius: 100vw;
 }
 
+.scroll-side {
+  position: absolute;
+  right: 2rem;
+  font-size: var(--fs-600);
+  color: var(--clr-accent-400);
+  animation: bounce 0.6s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(10px, 0, 0); }
+}
+
+
 .job * {
   margin: 0;
 }
@@ -1483,7 +1499,12 @@ aside {
   width: 28.5rem;
   border-radius: 0.25rem;
   padding: 2rem;
-  background: var(--clr-primary-800);
+  transition: 0.3s ease-out;
+  background:  var(--clr-primary-800);
+}
+.job:hover {
+  background: var(--clr-primary-400);
+  border: 1px solid var(--clr-secondary-400);
 }
 
 .job:first-child::before {
@@ -1558,17 +1579,77 @@ aside {
     margin-right: auto;
     margin-top: 2rem;
   }
+  aside {
+    justify-content: center;
+  }
 
   .resume-section {
     display: flex;
     flex-direction: column;
   }
   .resume-section .icon-list {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    overflow-x: auto;
+    display: grid;
+    position: relative;
+    border-left: unset;
+    padding: .45rem;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    padding-block: 2rem;
+    /* grid-template-columns: 1fr 1fr;*/
     width: min(50rem, 100% - 2rem);
   }
+
+  .resume-section .icon-list::-webkit-scrollbar {
+    height: 0.75rem;
+  }
+  
+  .resume-section .icon-list::-webkit-scrollbar-track {
+    background-color: var(--clr-primary-800);
+  }
+  
+  .resume-section .icon-list::-webkit-scrollbar-thumb {
+    background-color: var(--clr-accent-400);
+    border-radius: 100vw;
+  }
+  
   .icon-list>li {
     --_size: 0.3rem;
+    
+    padding: 20px;
+    border: 2px solid var(--clr-primary-300);
+    border-radius: 30px;
+    transition: 0.3s ease-out;
+    background-color: var(--clr-primary-400);
+  }
+  .icon-list>li::after {
+    width: 0;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--clr-primary-400);
+    background-color: var(--clr-primary-200);
+  }
+
+  .icon-list>li:hover {
+    background: var(--clr-primary-800);
+    border: 2px solid var(--clr-secondary-400);
+  }
+
+  .icon-list>li:first-child::before {
+    content: " Skilled in: ";
+    position: absolute;
+    color: var(--clr-accent-400);
+    left: 0;
+    top: -2rem;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    font-family: var(--ff-inter);
+    text-transform: capitalize;
+  }
+
+  .icon-list>li>img {
+    min-width: 4rem;
   }
   .back-button {
     top: 1rem;
@@ -1577,6 +1658,7 @@ aside {
   }
   .job {
     width: 20rem;
+    border-radius: 7px;
   }
   .job-info {
     display: flex;
@@ -1589,6 +1671,7 @@ aside {
   .intro { 
     max-width: 100%;
   }
+  
 }
 
 /*----------------------contact us section------------------------------------------*/

@@ -1025,6 +1025,7 @@
         const jobExperience = document.createElement("div");
         jobExperience.classList.add("job-experience");
 
+        
         const jobsData = [{
                 year: "2023",
                 certificate: "Introduction to AI",
@@ -1089,6 +1090,10 @@
                 ease: "power2.out",
             });
         });
+        
+        const iconElement = document.createElement("i");
+        iconElement.className = "bx bxs-right-arrow-alt scroll-side";
+        jobExperience.appendChild(iconElement);
 
         main.appendChild(jobExperience);
 
@@ -1148,6 +1153,13 @@
         });
 
         aside.appendChild(iconList);
+
+        if (window.innerWidth <= 640) {
+            const iconElement2 = document.createElement("i");
+            iconElement2.className = "bx bxs-right-arrow-alt scroll-side";
+            aside.appendChild(iconElement2);
+        }
+
 
         const backButton = document.createElement("div");
         backButton.classList.add("back-button");
