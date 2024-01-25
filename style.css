@@ -285,7 +285,7 @@ img {
 .hero-quote{
   transform: rotate(-9.915deg);
   font-family: var(--ff-base);
-  font-size: var(--fs-600);
+  font-size: var(--fs-500);
   font-style: normal;
   font-weight: 200;
   line-height: 117.5%;
@@ -293,7 +293,7 @@ img {
 }
 .hero-quoter{
   font-family: Segoe Script;
-  font-size: 24px;
+  font-size: var(--fs-500);
   font-style: normal;
   padding-top: 1rem;
   font-weight: 400;
@@ -436,7 +436,7 @@ img {
   color: var(--clr-neutral-100);
   padding-left: 1.25rem;
   font-family: var(--ff-base);
-  font-size: var(--fs-500);
+  font-size: var(--fs-400);
   max-width: 65%;
   font-weight: var(--fw-regular);
   text-align: justify;
