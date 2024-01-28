@@ -1514,6 +1514,16 @@ aside {
   top: 0;
   left: 0;
 }
+.job:nth-child(2) {
+  position: relative;
+}
+.job:nth-child(2)::before {
+  content: " Completed";
+  position: absolute;
+  color: var(--clr-accent-400);
+  top: -2rem;
+  left: 0;
+}
 
 .job:last-child {
   margin-right: 2rem;
@@ -1599,6 +1609,7 @@ aside {
     padding-block: 2rem;
     /* grid-template-columns: 1fr 1fr;*/
     width: min(50rem, 100% - 2rem);
+    padding-left: 1.25rem;
   }
 
   .resume-section .icon-list::-webkit-scrollbar {
@@ -1649,7 +1660,7 @@ aside {
   }
 
   .icon-list>li>img {
-    min-width: 4rem;
+    min-width: 3rem;
   }
   .back-button {
     top: 1rem;
