@@ -606,19 +606,47 @@
             newTab.focus();
         }
 
-        // const ctaButton = document.createElement('a');
-        // ctaButton.textContent = 'Hit me up!';
-        // ctaButton.classList.add('cta-button');
-        // ctaButton.addEventListener('click', clearAboutSection);
-        // aboutTextContent.appendChild(ctaButton);
-
         const videoDiv = document.createElement('div');
         videoDiv.classList.add('video-div');
-        // ... (add video content here)
+
+        // Video Element
+        const videoElement = document.createElement('video');
+        videoElement.setAttribute('autoplay', 'true');
+        videoElement.setAttribute('muted', 'true');
+        videoElement.setAttribute('loop', 'true');
+        videoElement.classList.add('fullscreen-video');
+
+        // Source Element within Video
+        const videoSource = document.createElement('source');
+        videoSource.setAttribute('src', './vid-1.mp4');
+        videoSource.setAttribute('type', 'video/mp4');
+
+        // Browser Compatibility Message
+        const videoFallbackText = document.createElement('p');
+        videoFallbackText.textContent = 'Your browser does not support this video file.';
+
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        overlay.textContent = 'Click anywhere to play the video';
+
+        // Appending elements
+        videoElement.appendChild(videoSource);
+        videoElement.appendChild(videoFallbackText);
+        videoDiv.appendChild(videoElement);
+        videoDiv.appendChild(overlay);
         aboutTextContent.appendChild(videoDiv);
+
+        document.addEventListener('click', () => {
+            videoElement.play().catch(error => {
+                console.error('Autoplay failed:', error);
+            });
+
+            overlay.style.display = 'none';
+        });
 
         const phoneDiv = document.createElement('div');
         phoneDiv.classList.add('phone-div');
+        phoneDiv.addEventListener('click', clearAboutSection);
 
 
         const phoneIcon = document.createElement('img');
