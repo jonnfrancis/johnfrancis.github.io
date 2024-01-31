@@ -19,7 +19,7 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
-    
+
 
 
     addHeroSection()
@@ -69,13 +69,19 @@
         //     scale: 1,
         //     duration: 1.4
         // })
-        timeline.from(".grid-item", { y: 15, opacity: 0, duration: 0.5, stagger: 0.2, ease: "power3.in" })
-        .from('.hero-content', {
-            height: 0,
-            opacity: 0,
-            duration: .8,
-            ease: 'power2.out'
-        }, "-=.4")
+        timeline.from(".grid-item", {
+                y: 15,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.2,
+                ease: "power3.in"
+            })
+            .from('.hero-content', {
+                height: 0,
+                opacity: 0,
+                duration: .8,
+                ease: 'power2.out'
+            }, "-=.4")
 
         timeline.from(".name-animation", {
                 opacity: 0,
@@ -168,8 +174,14 @@
         //     });
         // });
 
-        gsap.to('#mouse-down', {repeat: -1, y: -5, duration: .5, ease: Power2.out, yoyo: true})
-        
+        gsap.to('#mouse-down', {
+            repeat: -1,
+            y: -5,
+            duration: .5,
+            ease: Power2.out,
+            yoyo: true
+        })
+
         function clearHeroSection(callback) {
             const timeline = gsap.timeline({
                 onComplete: callback
@@ -297,18 +309,35 @@
         const content = document.createElement('div');
         content.classList.add('about-content');
 
-        const backgroundImage = 'url(./Projects/about-bg.jpg)';
+        const backgroundImage = 'url(./about-me/about-bg.png)';
         section.style.backgroundImage = backgroundImage;
+
+        const profileContainer = document.createElement('div');
+        profileContainer.classList.add('prof-container');
+
 
         const defaultSrc = './profile-picture.png';
         const alternativeSrc = './Projects/profile.png';
 
         const profilePicture = document.createElement('img');
         profilePicture.alt = 'A closeup of John Francis';
-        profilePicture.src = window.innerWidth <= 768 ? alternativeSrc : defaultSrc;;
+        profilePicture.src = window.innerWidth <= 768 ? alternativeSrc : alternativeSrc;;
         profilePicture.loading = 'lazy';
         profilePicture.classList.add('profile-picture');
-        content.appendChild(profilePicture);
+        profileContainer.appendChild(profilePicture);
+
+        const johnFrancisHeader = document.createElement('h2');
+        johnFrancisHeader.textContent = 'John Francis';
+        johnFrancisHeader.style.fontFamily = 'EB Garamond';
+        johnFrancisHeader.classList.add('catchy-text');
+        profileContainer.appendChild(johnFrancisHeader);
+
+        const catchyText = document.createElement('h4');
+        catchyText.textContent = 'Crafting Innovative Web Experiences';
+        catchyText.classList.add('catchy-text2');
+        profileContainer.appendChild(catchyText);
+
+        content.appendChild(profileContainer);
 
         const iconElement = document.createElement("i");
         iconElement.className = heroSection ? "back-main" : "bx bx-arrow-back back-main";
@@ -334,12 +363,6 @@
                     opacity: 0,
                     duration: 0.6,
                     ease: 'power3.out'
-                }, '-=0.6')
-                .to(ctaButton, {
-                    y: '30',
-                    opacity: 0,
-                    duration: 0.6,
-                    ease: 'power3.out'
                 }, '-=0.6');
 
             tl.call(() => {
@@ -350,11 +373,6 @@
         });
 
         content.appendChild(iconElement);
-
-        const catchyText = document.createElement('h2');
-        catchyText.textContent = 'Crafting Innovative Web Experiences';
-        catchyText.classList.add('catchy-text');
-        content.appendChild(catchyText);
 
         const aboutTextContent = document.createElement('div');
         aboutTextContent.classList.add('about-text-content');
@@ -372,7 +390,7 @@
         const tab1Link = document.createElement('a');
         tab1Link.id = 'tab-1';
         tab1Link.href = '#advertising';
-        tab1Link.textContent = 'Personal info';
+        tab1Link.textContent = 'About Me';
         tab1.appendChild(tab1Link);
         tabsList.appendChild(tab1);
 
@@ -588,15 +606,43 @@
             newTab.focus();
         }
 
-        const ctaButton = document.createElement('a');
-        ctaButton.textContent = 'Hit me up!';
-        ctaButton.classList.add('cta-button');
-        ctaButton.addEventListener('click', clearAboutSection);
-        aboutTextContent.appendChild(ctaButton);
+        // const ctaButton = document.createElement('a');
+        // ctaButton.textContent = 'Hit me up!';
+        // ctaButton.classList.add('cta-button');
+        // ctaButton.addEventListener('click', clearAboutSection);
+        // aboutTextContent.appendChild(ctaButton);
+
+        const videoDiv = document.createElement('div');
+        videoDiv.classList.add('video-div');
+        // ... (add video content here)
+        aboutTextContent.appendChild(videoDiv);
+
+        const phoneDiv = document.createElement('div');
+        phoneDiv.classList.add('phone-div');
+
+
+        const phoneIcon = document.createElement('img');
+        phoneIcon.setAttribute('src', './about-me/bxs-phone-call.svg');
+        phoneIcon.setAttribute('alt', 'Phone Icon');
+        phoneDiv.appendChild(phoneIcon);
+
+        aboutTextContent.appendChild(phoneDiv);
+
+        const customizationDiv = document.createElement('div');
+        customizationDiv.classList.add('customization-div');
+
+        const customizationImage = document.createElement('img');
+        customizationImage.setAttribute('src', './about-me/Hobby1.png');
+        customizationImage.setAttribute('alt', 'Customization Image');
+
+        customizationDiv.appendChild(customizationImage);
+
+        aboutTextContent.appendChild(customizationDiv);
 
         content.appendChild(aboutTextContent);
 
         section.appendChild(content);
+        switchTab(tabButtons[1]);
 
         document.body.appendChild(section);
 
@@ -641,8 +687,7 @@
                 id: 3,
                 title: "Project Movie",
                 tags: ["#movies", "#landing", "#series"]
-            },
-            ,
+            }, ,
             {
                 id: 4,
                 title: "Project VocabBoost",
@@ -810,7 +855,7 @@
         });
 
         const ctaButton1 = document.createElement('a');
-        ctaButton1.href="https://github.com/jonnfrancis?tab=repositories";
+        ctaButton1.href = "https://github.com/jonnfrancis?tab=repositories";
         ctaButton1.textContent = 'All Projects';
         ctaButton1.target = '_blank';
         ctaButton1.classList.add('cta-button', 'projects-btn');
@@ -833,17 +878,17 @@
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
         })
-        
+
         lenis.on('scroll', (e) => {
             console.log(e)
         })
-        
+
         function raf(time) {
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
-        
-        requestAnimationFrame(raf) 
+
+        requestAnimationFrame(raf)
 
         if (window.innerWidth >= 780) {
             gsap.timeline({
@@ -1025,7 +1070,7 @@
         const jobExperience = document.createElement("div");
         jobExperience.classList.add("job-experience");
 
-        
+
         const jobsData = [{
                 year: "2023",
                 certificate: "Introduction to AI",
@@ -1090,7 +1135,7 @@
                 ease: "power2.out",
             });
         });
-        
+
         const iconElement = document.createElement("i");
         iconElement.className = "bx bxs-right-arrow-alt scroll-side";
         jobExperience.appendChild(iconElement);
