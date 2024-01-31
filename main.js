@@ -462,16 +462,16 @@
         const occupationTitle = document.createElement('h2');
         occupationTitle.textContent = 'Occupation:';
         const occupationText = document.createElement('p');
-        occupationText.textContent = 'Web Developer';
+        occupationText.textContent = 'Front-End Developer';
         occupationDiv.appendChild(occupationTitle);
         occupationDiv.appendChild(occupationText);
         bioContent.appendChild(occupationDiv);
 
         const ageDiv = document.createElement('div');
         const ageTitle = document.createElement('h2');
-        ageTitle.textContent = 'Age:';
+        ageTitle.textContent = 'Hobbies:';
         const ageText = document.createElement('p');
-        ageText.textContent = '21';
+        ageText.textContent = 'Music, Gaming, Design';
         ageDiv.appendChild(ageTitle);
         ageDiv.appendChild(ageText);
         bioContent.appendChild(ageDiv);
@@ -1056,7 +1056,7 @@
 
         const intro = document.createElement("p");
         intro.classList.add("intro");
-        intro.innerHTML = `Enthusiastic about coding since 2020, I embarked on my journey with short courses, progressively advancing to complete two online courses from Harvard University via edX.<br> By 2021, I proudly earned certification as a proficient web developer, specializing in Python and JavaScript.<br>My expertise extends to crafting modern, sleek, and responsive web projects and applications.`;
+        intro.innerHTML = `Enthusiastic about coding since 2020, I embarked on my journey with short courses, progressively advancing to complete two courses from Harvard University.<br> By 2021, I proudly earned certification as a proficient web developer, specializing in Python and JavaScript.<br>My expertise extends to crafting modern, sleek, and responsive web projects and applications.`;
         main.appendChild(intro);
 
         gsap.from(intro, {
