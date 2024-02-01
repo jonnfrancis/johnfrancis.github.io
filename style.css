@@ -1044,6 +1044,10 @@ img {
 /* Styling for Customization Div */
 .customization-div {
   grid-area: customization;
+  background: url('./about-me/wall-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 @media (min-width: 768px) {
@@ -1052,18 +1056,6 @@ img {
     background-size: cover;
     padding-bottom: 2rem;
   }
-
-  /* .about-content {
-    display: grid;
-    grid-template-columns: auto 65%;
-    grid-template-areas:
-      "profile profile-container"
-      "title profile-container"
-    ;
-    gap: 1rem;
-    padding: 1rem;
-    height: 100vh;
-  } */
 
   .about-content {}
   .about-section .profile-picture {
@@ -1097,7 +1089,7 @@ img {
     
   }
   .about-text-content {
-    max-width: 65%;
+    max-width: 55%;
   }
 
   .about-section .catchy-text {
