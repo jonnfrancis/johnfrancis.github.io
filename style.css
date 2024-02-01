@@ -991,7 +991,7 @@ img {
 /* Styling for Video Div */
 .video-div {
   grid-area: video;
-  background: url("./about-me/orange-bg.png");
+  background: url("../about-me/orange-bg.png");
   background-size: cover;
   background-position: center;
   border-radius: 9.094px;
@@ -1029,7 +1029,7 @@ img {
 /* Styling for Phone Div */
 .phone-div {
   grid-area: phone;
-  background: url("./about-me/phone-bg.png");
+  background: url("../about-me/phone-bg.png");
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -1045,7 +1045,7 @@ img {
 /* Styling for Customization Div */
 .customization-div {
   grid-area: customization;
-  background: url('./about-me/wall-bg.png');
+  background: url('../about-me/wall-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1058,7 +1058,6 @@ img {
     padding-bottom: 2rem;
   }
 
-  .about-content {}
   .about-section .profile-picture {
     width: 15rem;
     border-radius: 50%;
@@ -1085,9 +1084,6 @@ img {
     display: flex;
     gap: 1rem;
     margin: 1rem;
-  }
-  .prof-container {
-    
   }
   .about-text-content {
     max-width: 55%;
