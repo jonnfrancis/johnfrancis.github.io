@@ -781,7 +781,8 @@ img {
 } */
 
 .wrapper {
-  width: min(50rem, 100% - 2rem);
+  /* width: min(50rem, 100% - 2rem); */
+  width: 100%;
   margin-inline: auto;
   text-decoration: none;
   grid-area: tabs;
