@@ -737,7 +737,7 @@ img {
 [role="tab"] {
   text-decoration: none;
   color: #161E35;
-  font-size: var(--fs-500);
+  font-size: var(--fs-400);
   font-family: var(--ff-base);
 }
 
@@ -757,7 +757,7 @@ img {
   text-decoration-thickness: 0.25em;
   text-underline-offset: 0.5em;
   color: var(--clr-primary-800);
-  font-size: var(--fs-500);
+  font-size: var(--fs-400);
   position: relative;
   padding: .45rem 1rem;
   border-radius: 8.951px;
