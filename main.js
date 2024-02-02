@@ -672,6 +672,32 @@
         section.appendChild(content);
         switchTab(tabButtons[1]);
 
+        function addInfiniteAnimation() {
+            const firstInactiveTab = tabsList.querySelector('[role="tab"]:not([aria-selected="true"]');
+            if (firstInactiveTab) {
+                firstInactiveTab.classList.add('infiniteAnimation');
+            }
+        }
+
+        // Add a click event listener to tabsContainer
+        tabsContainer.addEventListener("click", (e) => {
+            const clickedTab = e.target.closest("a");
+            if (!clickedTab) return;
+            e.preventDefault();
+
+            switchTab(clickedTab);
+
+            // Remove the animation class from all tabs
+            tabsList.querySelectorAll('[role="tab"]').forEach(tab => {
+                tab.classList.remove('infiniteAnimation');
+            });
+
+            // Add the infinite animation class to the first inactive tab
+            addInfiniteAnimation();
+        });
+
+        // Call the function on page load to initialize the animation
+        addInfiniteAnimation();
         document.body.appendChild(section);
 
         function clearAboutSection() {
