@@ -1053,6 +1053,7 @@ img {
   background-position: center;
   background-size: cover;
 }
+
 .phone-div > img {
   width: 20%;
 }
@@ -1209,7 +1210,7 @@ img {
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: top left;
   border-radius: 3.125rem;
   border: 1px solid var(--clr-secondary-400);
   z-index: 1;
