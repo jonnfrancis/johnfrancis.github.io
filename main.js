@@ -739,9 +739,9 @@
             },
             {
                 id: 3,
-                title: "Project Movie",
-                tags: ["#movies", "#landing", "#series"]
-            }, ,
+                title: "Project Data",
+                tags: ["#2024", "#data", "#visualization"]
+            },
             {
                 id: 4,
                 title: "Project VocabBoost",
@@ -749,6 +749,11 @@
             },
             {
                 id: 5,
+                title: "Project Movie",
+                tags: ["#movies", "#landing", "#series"]
+            },
+            {
+                id: 6,
                 title: "All Projects",
                 tags: ["#modern", "#ui", "#web"]
             }
