@@ -245,7 +245,7 @@ img {
 .hero-illustration .grid-container {
   margin: 1rem;
   margin-top: 1.75rem;
-  height: 80vh;
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
@@ -267,27 +267,32 @@ img {
   padding: 0;
   scale: 1;
   justify-content: center;
-  transition: transform .15s ease-in;
+  transition: transform 0.3s ease-in-out;
 }
 .hero-illustration .grid-container .grid-item:hover { 
-  transform: translateY(-5px);
+  transform: translateY(-3px) !important;
 }
 .tile-1{
   grid-area: tile1;
   color: var(--clr-neutral-100);
   flex-direction: column;
-}
-.tile-1:hover {
   background: #202C50;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  min-height: 10rem;
   border-radius: 30px;
+}
+.tile-1:hover {
+  background: var(--clr-primary-300);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  height: 100%;
 }
 .hero-quote{
   transform: rotate(-9.915deg);
   font-family: var(--ff-base);
   font-size: var(--fs-500);
-  font-style: normal;
-  font-weight: 200;
+  max-width: 15ch;
+  font-weight: 300;
   line-height: 117.5%;
   padding-left: 1rem;
 }
@@ -299,6 +304,7 @@ img {
   font-weight: 400;
   line-height: 117.5%;
   text-align: center;
+  padding-block: .5rem;
 }
 .tile-2{
   grid-area: tile2;
@@ -347,10 +353,17 @@ img {
 .tile-3{
   grid-area: tile3;
   background-image: url("../Projects/tile2.png");
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 29px;
+}
+.tile-3:hover {
+  background-position: 80% 20%;
+  box-shadow: rgb(0, 102, 255, .5) 0px 5px 15px 0px, rgb(0, 200, 255, .5) 0px 3px 9px -3px;
+  transform: translate3d(0px, 0px, 50px);
 }
 
 .tile-4{
@@ -373,8 +386,9 @@ img {
   z-index: -1;
 }
 
-.Ig-icon {
+.tile-4 .Ig-icon {
   z-index: 10;
+  padding-block: .75rem;
   border-radius: 50%;
 }
 
@@ -424,6 +438,12 @@ img {
   background-position: center right;
   border-radius: 60px;
   background-color: #385889;
+  transition: all 0.5s ease-in;
+}
+
+.tile-6:hover {
+  background: var(--clr-primary-400);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .profile-hero {
@@ -458,7 +478,7 @@ img {
 
 .hero h1 {
   font-size: var(--fs-700);
-  font-family: var(--ff-gd);
+  font-family: var(--ff-base);
   font-weight: var(--fw-bold);
   text-transform: capitalize;
 }
@@ -469,9 +489,10 @@ img {
 
 
 .mask p {
-  font-size: var(--fs-500);
-  font-family: var(--ff-gd);
+  font-size: var(--fs-400);
   color: var(--clr-nuetral-100);
+  font-family: var(--ff-base);
+  letter-spacing: .75px; 
   text-align: right;
 }
 
@@ -1555,6 +1576,7 @@ aside {
   color: var(--clr-secondary-400);
   font-size: var(--fs-300);
   font-weight: var(--fw-bold);
+  font-family: var(--ff-gd);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 0;

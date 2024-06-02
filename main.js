@@ -627,7 +627,7 @@
 
         const overlay = document.createElement('div');
         overlay.classList.add('overlay');
-        overlay.textContent = 'Click anywhere to play the video';
+        overlay.innerHTML = `<img src="./icons/play.svg" alt="Play Icon" class="play">`
 
         // Appending elements
         videoElement.appendChild(videoSource);
@@ -731,6 +731,7 @@
                 id: 1,
                 title: "Project Tripplesee",
                 tags: ["#business", "#webapp", "#marketing"]
+                // url: "https://www.johnfrancis.dev/tripplesee-ltd/"
             },
             {
                 id: 2,
@@ -754,9 +755,14 @@
             },
             {
                 id: 6,
-                title: "All Projects",
-                tags: ["#modern", "#ui", "#web"]
+                title: "Project Dashboard",
+                tags: ["#data", "#bigcompany", "#datascience"]
             }
+            // {
+            //     id: 7,
+            //     title: "All Projects",
+            //     tags: ["#modern", "#ui", "#web"]
+            // }
         ]
 
 
