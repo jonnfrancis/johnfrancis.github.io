@@ -48,6 +48,6 @@ The projects section showcases my best work, including commercial and personal p
 
 ---
 
-Feel free to clone this repository and explore the codebase. For any inquiries or collaboration opportunities, please reach out through my social media profiles.
+For any inquiries or collaboration opportunities, please reach out through my social media profiles.
 
 ---
