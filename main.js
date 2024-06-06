@@ -496,10 +496,13 @@
         const experienceList = document.createElement('ul');
         experienceList.innerHTML = `
             <li class="experience-item">
-            <p class="experiences-title">Front End<span class="experiences-span">@tripplesee | 2022</span></p>
+                <p class="experiences-title">Front End<span class="experiences-span">@tripplesee | 2022</span></p>
             </li>
             <li class="experience-item">
-            <p class="experiences-title">Consultant <span class="experiences-span">@Ilepa | 2023</span></p>
+                <p class="experiences-title">Consultant <span class="experiences-span">@Ilepa | 2023</span></p>
+            </li>
+            <li class="experience-item">
+                <p class="experiences-title">Data Visualization<span class="experiences-span">@Itech | 2024</span></p>
             </li>
         `;
         expPanel.appendChild(experienceList)
@@ -652,6 +655,7 @@
         const phoneIcon = document.createElement('img');
         phoneIcon.setAttribute('src', './about-me/bxs-phone-call.svg');
         phoneIcon.setAttribute('alt', 'Phone Icon');
+        phoneIcon.setAttribute('title', 'Contact Me');
         phoneDiv.appendChild(phoneIcon);
 
         aboutTextContent.appendChild(phoneDiv);
@@ -922,6 +926,7 @@
         const ctaButton1 = document.createElement('a');
         ctaButton1.href = "https://github.com/jonnfrancis?tab=repositories";
         ctaButton1.textContent = 'All Projects';
+        ctaButton1.setAttribute('title', 'Visit my Github Repositories');
         ctaButton1.target = '_blank';
         ctaButton1.classList.add('cta-button', 'projects-btn');
         section.appendChild(ctaButton1);
@@ -932,6 +937,7 @@
             addContactUsSection();
         });
         ctaButton.textContent = 'Contact Me';
+        ctaButton.setAttribute('title', 'Contact Me');
         ctaButton.classList.add('cta-button', 'contact-btn');
         section.appendChild(ctaButton);
 
@@ -1121,7 +1127,7 @@
 
         const intro = document.createElement("p");
         intro.classList.add("intro");
-        intro.innerHTML = `Enthusiastic about coding since 2020, I embarked on my journey with short courses, progressively advancing to complete two courses from Harvard University.<br> By 2021, I proudly earned certification as a proficient web developer, specializing in Python and JavaScript.<br>My expertise extends to crafting modern, sleek, and responsive web projects and applications.`;
+        intro.innerHTML = `I embarked on my journey with short courses in 2020, progressively advancing to complete two courses from Harvard University.<hr> By 2021, I proudly earned certification as a proficient web developer, specializing in Python and JavaScript.<hr>Currently my expertise extends to designing modern web projects and applications, Website Optimizations, Backend Engineering and Database Management.`;
         main.appendChild(intro);
 
         gsap.from(intro, {
@@ -1134,6 +1140,11 @@
 
         const jobExperience = document.createElement("div");
         jobExperience.classList.add("job-experience");
+
+        const jobHeader = document.createElement("h3");
+        jobHeader.classList.add("page-subtitle");
+        jobHeader.textContent = "Skills & Education";
+        jobExperience.appendChild(jobHeader);
 
 
         const jobsData = [{
@@ -1153,12 +1164,14 @@
                 certificate: "Web Programming",
                 institution: "Harvard",
                 info: "A comprehensive course on web programming, covering Python and JavaScript.",
+                credential: "https://credentials.edx.org/credentials/77a6a4ad9c1e46e8ae2d9225788b91eb/"
             },
             {
                 year: "2020",
                 certificate: "Introduction to CS",
                 institution: "Harvard",
                 info: "An introductory course providing an overview of computer science concepts and principles.",
+                credential: "https://courses.edx.org/certificates/f2b836da46574f27815560d09ec90416"
             },
         ];
 
@@ -1189,8 +1202,16 @@
             infoParagraph.classList.add("info-paragraph");
             infoParagraph.textContent = jobData.info;
 
+            const credential = document.createElement("a");
+            credential.classList.add("credential-link");
+            credential.href = jobData.credential;
+            credential.innerHTML = `View My Credentials <i class='bx bx-right-top-arrow-circle credential-icon'></i>`;
+            credential.style.display = jobData.credential ? "block" : "none";
+            
+
             job.appendChild(jobInfo);
             job.appendChild(infoParagraph);
+            job.appendChild(credential)
             jobExperience.appendChild(job);
 
             gsap.to(job, {

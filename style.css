@@ -502,12 +502,12 @@ img {
   background-color: var(--clr-secondary-400);
   color: var(--clr-neutral-100);
   text-decoration: none;
+  cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-  color: #161E35;
   background-color: var(--clr-accent-400);
 }
 
@@ -1612,6 +1612,16 @@ aside {
   scrollbar-color: var(--clr-accent-400) var(--clr-primary-800);
 }
 
+.page-subtitle {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-family: var(--ff-inter);
+  font-size: var(--fs-600);
+  margin: 0;
+  padding: 0;
+}
+
 .job-experience::-webkit-scrollbar {
   height: 0.75rem;
 }
@@ -1649,25 +1659,28 @@ aside {
   width: 28.5rem;
   border-radius: 0.25rem;
   padding: 2rem;
-  transition: 0.3s ease-out;
+  transition: all 0.3s ease-in;
+  margin-top: 2.75rem;
   background:  var(--clr-primary-800);
 }
 .job:hover {
   background: var(--clr-primary-400);
-  border: 1px solid var(--clr-secondary-400);
-}
-
-.job:first-child::before {
-  content: " Ongoing Course";
-  position: absolute;
-  color: var(--clr-accent-400);
-  top: 0;
-  left: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px  ;
 }
 .job:nth-child(2) {
   position: relative;
 }
 .job:nth-child(2)::before {
+  content: " Ongoing Course";
+  position: absolute;
+  color: var(--clr-accent-400);
+  top: -2rem;
+  left: 0;
+}
+.job:nth-child(3) {
+  position: relative;
+}
+.job:nth-child(3)::before {
   content: " Completed";
   position: absolute;
   color: var(--clr-accent-400);
@@ -1699,6 +1712,15 @@ aside {
 
 .company {
   color: var(--clr-primary-200);
+}
+.credential-link{
+  text-align: right;
+  text-decoration: none;
+  color: var(--clr-secondary-400);
+  margin-top: 1rem;
+}
+.credential-icon {
+  width: var(--fs-400);
 }
 
 .resume-section .icon-list {
@@ -1732,6 +1754,7 @@ aside {
   background: var(--clr-nuetral-100);
 }
 
+
 @media (max-width : 640px) {
   main {
     width: min(50rem, 100% - 2rem);
@@ -1742,7 +1765,19 @@ aside {
   aside {
     justify-content: center;
   }
-
+  .page-title {
+    text-align: center;
+  }
+  .intro {
+    text-align: center;
+  }
+  .job-experience {
+    position: relative;
+  }
+  .page-subtitle {
+    position: absolute;
+    font-size: var(--fs-500);
+  }
   .resume-section {
     display: flex;
     flex-direction: column;
@@ -1820,6 +1855,7 @@ aside {
   .job {
     width: 20rem;
     border-radius: 7px;
+    margin-top: 2rem;
   }
   .job-info {
     display: flex;
