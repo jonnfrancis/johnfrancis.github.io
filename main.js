@@ -755,12 +755,12 @@
             {
                 id: 5,
                 title: "Project Movie",
-                tags: ["#movies", "#landing", "#series"]
+                tags: ["#movies", "#landingpage", "#series"]
             },
             {
                 id: 6,
                 title: "Project Dashboard",
-                tags: ["#data", "#bigcompany", "#datascience"]
+                tags: ["#data", "#analytics", "#datascience"]
             }
             // {
             //     id: 7,
@@ -951,7 +951,7 @@
         })
 
         lenis.on('scroll', (e) => {
-            console.log(e)
+            // console.log(e)
         })
 
         function raf(time) {
