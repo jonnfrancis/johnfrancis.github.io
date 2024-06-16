@@ -1091,7 +1091,6 @@
                     scrollTrigger: {
                         trigger: card,
                         end: 'bottom 20%',
-                        scrub: 2
                     },
                     scale: .8,
                     opacity: 0,
