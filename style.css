@@ -211,7 +211,7 @@ img {
 .hero {
   position: relative;
   height: 100vh;
-  height: 100dvh;
+  /* height: 100dvh; */
   background-color: var(--clr-primary-700);
   display: grid;
   grid-template-columns: 45% 1fr;
@@ -1554,7 +1554,7 @@ img {
   gap: 10vw;
   grid-auto-flow: dense;
   min-height: 100vh;
-  min-height: 100dvh;
+  /* min-height: 100dvh; */
   position: relative;
   align-items: center;
 }
