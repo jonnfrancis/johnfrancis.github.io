@@ -1239,6 +1239,15 @@ img {
   overflow: hidden;
 }
 
+.project-card::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: hsla(230, 50%, 58%, 0.2);
+  position: absolute;
+  z-index: 1;
+}
+
 
 
 .card-subtitle {
@@ -1252,6 +1261,7 @@ img {
   text-align: center;
   border-radius: 2.1875rem 3px 3px 3px;
   margin: 10px;
+  z-index: 10;
 }
 
 
@@ -1308,6 +1318,7 @@ img {
   font-weight: var(--fw-semi-bold);
   font-family: var(--ff-gd);
   text-transform: uppercase;
+  z-index: 10;
 }
 
 .projects-header {
@@ -1689,21 +1700,27 @@ aside {
   position: relative;
 }
 .job:nth-child(2)::before {
-  content: " Ongoing Course";
+  content: "Ongoing Course";
   position: absolute;
   color: var(--clr-accent-400);
-  top: -2rem;
-  left: 0;
+  background: var(--clr-primary-300);
+  padding: 5px 7px;
+  border-radius: 3px;
+  top: 0;
+  right: 0;
 }
-.job:nth-child(3) {
+.job:not(:nth-child(2)) {
   position: relative;
 }
-.job:nth-child(3)::before {
-  content: " Completed";
+.job:not(:nth-child(2))::before {
+  content: "Completed";
   position: absolute;
   color: var(--clr-accent-400);
-  top: -2rem;
-  left: 0;
+  background: var(--clr-primary-300);
+  padding: 5px 7px;
+  border-radius: 3px;
+  top: 0;
+  right: 0;
 }
 
 .job:last-child {
@@ -1858,7 +1875,7 @@ aside {
     top: -2rem;
     font-size: var(--fs-400);
     font-weight: var(--fw-regular);
-    font-family: var(--ff-inter);
+    font-family: var(--ff-Outfit);
     text-transform: capitalize;
   }
 
@@ -1875,6 +1892,10 @@ aside {
     border-radius: 7px;
     margin-top: 2rem;
   }
+  .job::before {
+    right: unset;
+    left: 0;
+  }
   .job-info {
     display: flex;
     flex-direction: column-reverse;
@@ -1882,6 +1903,7 @@ aside {
   }
   .year { 
     text-align: right;
+    padding-top: .75rem;
   }
   .intro { 
     max-width: 100%;

@@ -324,17 +324,53 @@
         profilePicture.src = window.innerWidth <= 768 ? alternativeSrc : alternativeSrc;;
         profilePicture.loading = 'lazy';
         profilePicture.classList.add('profile-picture');
+        gsap.from(profilePicture, {
+            scrollTrigger: {
+                trigger: profilePicture,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
         profileContainer.appendChild(profilePicture);
 
         const johnFrancisHeader = document.createElement('h2');
         johnFrancisHeader.textContent = 'John Francis';
         johnFrancisHeader.style.fontFamily = 'EB Garamond';
         johnFrancisHeader.classList.add('catchy-text');
+        gsap.from(johnFrancisHeader, {
+            scrollTrigger: {
+                trigger: johnFrancisHeader,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
         profileContainer.appendChild(johnFrancisHeader);
 
         const catchyText = document.createElement('h4');
         catchyText.textContent = 'Crafting Innovative Web Experiences';
         catchyText.classList.add('catchy-text2');
+        gsap.from(catchyText, {
+            scrollTrigger: {
+                trigger: catchyText,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
         profileContainer.appendChild(catchyText);
 
         content.appendChild(profileContainer);
@@ -385,6 +421,18 @@
 
         const tabsList = document.createElement('ul');
         tabsList.setAttribute('aria-labelledby', 'tabs-title');
+        gsap.from(tabsList, {
+            scrollTrigger: {
+                trigger: tabsList,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
 
         const tab1 = document.createElement('li');
         const tab1Link = document.createElement('a');
@@ -416,6 +464,18 @@
 
         const tabsPanels = document.createElement('div');
         tabsPanels.classList.add('tabs__panels', 'flow');
+        gsap.from(tabsPanels, {
+            scrollTrigger: {
+                trigger: tabsPanels,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
 
         const advertisingPanel = document.createElement('div');
         advertisingPanel.id = 'advertising';
@@ -502,7 +562,7 @@
                 <p class="experiences-title">Consultant <span class="experiences-span">@Ilepa | 2023</span></p>
             </li>
             <li class="experience-item">
-                <p class="experiences-title">Data Visualization<span class="experiences-span">@Itech | 2024</span></p>
+                <p class="experiences-title">Data Visualizations<span class="experiences-span">@Itech | 2024</span></p>
             </li>
         `;
         expPanel.appendChild(experienceList)
@@ -611,12 +671,27 @@
 
         const videoDiv = document.createElement('div');
         videoDiv.classList.add('video-div');
+        gsap.from(videoDiv, {
+            scrollTrigger: {
+                trigger: videoDiv,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
 
         // Video Element
         const videoElement = document.createElement('video');
         videoElement.setAttribute('autoplay', 'true');
         videoElement.setAttribute('muted', 'true');
         videoElement.setAttribute('loop', 'true');
+        videoElement.setAttribute('playsinline', 'true');
+        videoElement.setAttribute('preload', 'true');
+        videoElement.setAttribute('poster', './about-me/orange-bg.png');
         videoElement.classList.add('fullscreen-video');
 
         // Source Element within Video
@@ -628,15 +703,15 @@
         const videoFallbackText = document.createElement('p');
         videoFallbackText.textContent = 'Your browser does not support this video file.';
 
-        const overlay = document.createElement('div');
-        overlay.classList.add('overlay');
-        overlay.innerHTML = `<img src="./icons/play.svg" alt="Play Icon" class="play">`
+        // const overlay = document.createElement('div');
+        // overlay.classList.add('overlay');
+        // overlay.innerHTML = `<img src="./icons/play.svg" alt="Play Icon" class="play">`
 
         // Appending elements
         videoElement.appendChild(videoSource);
         videoElement.appendChild(videoFallbackText);
         videoDiv.appendChild(videoElement);
-        videoDiv.appendChild(overlay);
+        // videoDiv.appendChild(overlay);
         aboutTextContent.appendChild(videoDiv);
 
         document.addEventListener('click', () => {
@@ -644,12 +719,24 @@
                 console.error('Autoplay failed:', error);
             });
 
-            overlay.style.display = 'none';
+            // overlay.style.display = 'none';
         });
 
         const phoneDiv = document.createElement('div');
         phoneDiv.classList.add('phone-div');
         phoneDiv.addEventListener('click', clearAboutSection);
+        gsap.from(phoneDiv, {
+            scrollTrigger: {
+                trigger: phoneDiv,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
 
 
         const phoneIcon = document.createElement('img');
@@ -662,6 +749,18 @@
 
         const customizationDiv = document.createElement('div');
         customizationDiv.classList.add('customization-div');
+        gsap.from(customizationDiv, {
+            scrollTrigger: {
+                trigger: customizationDiv,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
 
         const customizationImage = document.createElement('img');
         customizationImage.setAttribute('src', './about-me/Hobby1.png');
@@ -788,6 +887,18 @@
         const header = document.createElement('h1');
         header.textContent = 'Projects';
         header.classList.add('projects-header');
+        gsap.from(header, {
+            scrollTrigger: {
+                trigger: section,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
         projectsContainer.appendChild(header);
 
         const projectText = document.createElement('div');
@@ -796,16 +907,52 @@
         const projectsP = document.createElement('p');
         projectsP.textContent = 'Innovate. Inspire. Impress.';
         projectsP.classList.add('projects-P');
+        gsap.from(projectsP, {
+            scrollTrigger: {
+                trigger: projectsP,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
         projectText.appendChild(projectsP);
 
         const title = document.createElement('h2');
         title.textContent = 'Innovations Gallery -  My Web  Projects';
         title.classList.add('projects-title');
+        gsap.from(title, {
+            scrollTrigger: {
+                trigger: title,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
         projectText.appendChild(title);
 
         const paragraph = document.createElement('p');
         paragraph.textContent = 'Find my best projects below!';
         paragraph.classList.add('projects-paragraph');
+        gsap.from(paragraph, {
+            scrollTrigger: {
+                trigger: paragraph,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
         projectText.appendChild(paragraph);
 
         const link = document.createElement('div');
@@ -815,6 +962,18 @@
             addResumeSection();
         });
         link.classList.add('projects-link');
+        gsap.from(link, {
+            scrollTrigger: {
+                trigger: link,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
         projectText.appendChild(link);
 
         projectsContainer.appendChild(projectText);
@@ -825,12 +984,50 @@
         socialMediaDiv.classList.add('contact-social-media');
 
         const linkedInLink = createSocialMediaLink('Linkedin', 'https://linkedin.com/in/john-francis-732259211', 'bx bxl-linkedin');
+        gsap.from(linkedInLink, {
+            scrollTrigger: {
+                trigger: linkedInLink,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
         socialMediaDiv.appendChild(linkedInLink);
 
         const twitterLink = createSocialMediaLink('Twitter', 'https://github.com/jonnfrancis', 'bx bxl-github');
+        gsap.from(twitterLink, {
+            scrollTrigger: {
+                trigger: twitterLink,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
+
         socialMediaDiv.appendChild(twitterLink);
 
         const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com/johnfrancis.dev', 'bx bxl-instagram');
+        gsap.from(instagramLink, {
+            scrollTrigger: {
+                trigger: instagramLink,
+                end: 'bottom 20%',
+                scrub: 2
+            },
+            scale: .8,
+            opacity: 0,
+            transformOrigin: 'center',
+            duration: 2,
+            ease: 'power4.out'
+        })
+
         socialMediaDiv.appendChild(instagramLink);
 
         section.appendChild(socialMediaDiv);
@@ -889,6 +1086,20 @@
             const card = document.createElement("div");
             card.classList.add("project-card");
 
+            if (window.innerWidth <= 780) {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        end: 'bottom 20%',
+                        scrub: 2
+                    },
+                    scale: .8,
+                    opacity: 0,
+                    transformOrigin: 'center',
+                    duration: 2,
+                    ease: 'power4.out'
+                })
+             }
             // Set the background image
             card.style.backgroundImage = `url('./Projects/${project.id}.png')`;
 
@@ -1127,7 +1338,7 @@
 
         const intro = document.createElement("p");
         intro.classList.add("intro");
-        intro.innerHTML = `I embarked on my journey with short courses in 2020, progressively advancing to complete two courses from Harvard University.<hr> By 2021, I proudly earned certification as a proficient web developer, specializing in Python and JavaScript.<hr>Currently my expertise extends to designing modern web projects and applications, Website Optimizations, Backend Engineering and Database Management.`;
+        intro.innerHTML = `I embarked on my journey with short courses and youtube tutorials in 2020, progressively advancing to complete two courses from Harvard University.<hr> By 2021, I proudly earned certification as a proficient web developer from Harvard, specializing in Python and JavaScript.<hr>Currently my expertise extends to designing modern web projects and applications, Website Optimizations, Backend Engineering and Database Management.`;
         main.appendChild(intro);
 
         gsap.from(intro, {
