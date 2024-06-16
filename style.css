@@ -770,10 +770,10 @@ img {
 
 @keyframes pulseAnimation {
   0% {
-    border: 0px solid var(--clr-accent-400) ;
+    outline: 0px solid var(--clr-accent-400) ;
   }
   100% {
-    border: 3px solid var(--clr-secondary-400) ;
+    outline: 3px solid var(--clr-secondary-400) ;
   }
 }
 
