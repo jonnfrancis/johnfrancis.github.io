@@ -839,7 +839,7 @@
             {
                 id: 2,
                 title: "Project Portfolio",
-                tags: ["#webdev", "#mysite"]
+                tags: ["#webdev", "#personal"]
             },
             {
                 id: 3,
@@ -848,7 +848,7 @@
             },
             {
                 id: 4,
-                title: "Project VocabBoost",
+                title: "Project ViteVocab",
                 tags: ["#2023", "#vocabulary", "#learn"]
             },
             {
