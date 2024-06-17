@@ -1,5 +1,5 @@
 # John Francis - Web Developer Portfolio
-![Home Section](https://imgur.com/zdD3zMg)
+![Home Section](https://i.imgur.com/LScj2PO.png)
 
 ---
 ## Project Overview
@@ -49,7 +49,7 @@ The projects section showcases my best work, including commercial and personal p
 ## Screenshots
 
 ### Home Section
-![Home Section](https://i.imgur.com/LScj2PO.png)
+![Home Section](https://imgur.com/zdD3zMg.png)
 
 ### Projects Section
 ![Projects Section](https://i.imgur.com/rhz05xH.png)
