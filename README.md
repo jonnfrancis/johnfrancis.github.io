@@ -14,6 +14,13 @@ Welcome to my professional web developer portfolio. This project showcases my sk
 
 This portfolio is a comprehensive presentation of my work as a web developer. It features sections that include my resume, contact information, and a showcase of my projects. Developed using Vite, React, GSAP, and Tailwind CSS, this project demonstrates my commitment to staying updated with industry trends and continuously learning new frameworks and libraries.
 
+## Technologies Used
+
+- **Vite**: For fast and efficient project development and build setup.
+- **React**: To build a dynamic and interactive user interface.
+- **GSAP**: For smooth and engaging animations.
+- **Tailwind CSS**: To style the project with modern and responsive design elements.
+
 ## Sections
 
 - **Home**: Introduction and overview of who I am and what I do.
@@ -38,13 +45,6 @@ The contact section provides various ways to get in touch with me, including lin
 ### Projects Section
 
 The projects section showcases my best work, including commercial and personal projects. Each project is presented with a brief description and visual representation.
-
-## Technologies Used
-
-- **Vite**: For fast and efficient project development and build setup.
-- **React**: To build a dynamic and interactive user interface.
-- **GSAP**: For smooth and engaging animations.
-- **Tailwind CSS**: To style the project with modern and responsive design elements.
 
 ## Screenshots
 
