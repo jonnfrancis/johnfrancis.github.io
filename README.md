@@ -1,4 +1,7 @@
 # John Francis - Web Developer Portfolio
+![Home Section](https://i.imgur.com/LScj2PO.png)
+
+---
 
 Welcome to my professional web developer portfolio. This project showcases my skills, experience, and the modern web projects I have developed over the years. Built with cutting-edge technologies, this portfolio highlights my proficiency in creating user-centric, responsive, and visually appealing web applications.
 
