@@ -2,10 +2,6 @@
 ![Home Section](https://i.imgur.com/LScj2PO.png)
 
 ---
-Sure, let's fix that by providing the correct Markdown syntax for embedding images from Imgur.
-
----
-
 ## Project Overview
 
 **Project Name:** My Developer Portfolio  
