@@ -48,11 +48,11 @@ The projects section showcases my best work, including commercial and personal p
 
 ## Screenshots
 
-### Home Section
-![Home Section](https://imgur.com/zdD3zMg.png)
-
 ### Projects Section
 ![Projects Section](https://i.imgur.com/rhz05xH.png)
+
+### Home Section
+![Home Section](https://imgur.com/zdD3zMg.png)
 
 ---
 
