@@ -28,7 +28,7 @@ This portfolio is a comprehensive presentation of my work as a web developer. It
 - **Contact**: Ways to get in touch with me for potential collaborations or inquiries.
 - **Projects**: A showcase of my most significant and impressive web development projects.
 
-![Home Section](https://imgur.com/8sJ99QD)
+![Home Section](https://imgur.com/8sJ99QD.png)
 
 ## Usage Instructions
 
