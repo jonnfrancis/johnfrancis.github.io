@@ -1226,17 +1226,71 @@ img {
   margin-block: 2rem;
 }
 
+.project-cardd {
+  position: relative;
+}
 .project-card {
   height: 28.125rem;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
-  border-radius: 3.125rem;
+  border-radius: 3.125rem 3px 3.125rem 3.125rem;
   border: 1px solid var(--clr-secondary-400);
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  text-decoration: none;
+  padding-block: 5px;
+  padding-inline: 7px;
+  border-radius: 3px;
+  color: var(--clr-neutral-100);
+  background: var(--clr-secondary-400);
+  /* transform: translate(-50%); */
+}
+.project-arrow {
+  width: 18px;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    animation-name: backgroundEffect;
+    -webkit-animation-name: backgroundEffect;
+    animation-duration: 15s;
+    transform-origin: 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .project-card:nth-child(2) {
+    animation-delay: .2s;
+  }
+  .project-card:nth-child(3) {
+    animation-delay: .4s;
+  }
+  .project-card:nth-child(4) {
+    animation-delay: .6s;
+  }
+  .project-card:nth-child(5) {
+    animation-delay: .8s;
+  }
+  .project-card:nth-child(6) {
+    animation-delay: 1s;
+  }
+
+  @keyframes backgroundEffect {
+    0% {background-position: 0% 0%}
+    25% {background-position: 50% 0%}
+    50% {background-position: 100% 0%}
+    75% {background-position: 50% 0%}
+    100% {background-position: 0% 0%}
+  }
 }
 
 .project-card::before {
@@ -1282,7 +1336,6 @@ img {
   margin-bottom: 5px;
 }
 
-
 .card-number {
   font-size: var(--fs-700);
   font-weight: 900;
@@ -1304,7 +1357,7 @@ img {
 
 .card-title .title-text {
   border-radius: 3px 3px 2.1875rem 3px;
-  border: 1.25px solid var(--clr-accent-400);
+  border: 1.25px solid var(--clr-primary-200);
   padding-block: 1.25rem;
   padding-right: .45rem;
   padding-left: .5rem;
@@ -1312,7 +1365,7 @@ img {
   bottom: .75rem;
   margin-right: 0;
   background: var(--clr-primary-700);
-  color: var(--clr-accent-400);
+  color: var(--clr-neutral-100);
   right: 10px;
   font-size: 24px;
   font-weight: var(--fw-semi-bold);
@@ -1434,9 +1487,24 @@ img {
     height: 200vh;
   }
 
+  .card-link {
+    display: none;
+    padding: 7px 10px;
+    font-size: var(--fs-500);
+    top: unset;
+    right: 10px;
+    bottom: 5px;
+    border-radius: 3px 3px 20px 3px;
+    /* opacity: 0; */
+  }
+  
+  .project-arrow {
+    width: 1.55rem;
+  }
+
   .card-title .title-text {
     position: absolute;
-    bottom: 10px;
+    bottom: 3.5rem;
     right: 10px;
     font-size: 24px;
     font-weight: bold;
@@ -1462,6 +1530,7 @@ img {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    /* border-radius: 3.125rem 3.125rem 3px 3.125rem; */
   }
 
   .project-card::before {

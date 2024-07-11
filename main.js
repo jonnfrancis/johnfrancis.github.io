@@ -833,33 +833,36 @@
         const projectsData = [{
                 id: 1,
                 title: "Project Tripplesee",
-                tags: ["#business", "#webapp", "#marketing"]
-                // url: "https://www.johnfrancis.dev/tripplesee-ltd/"
+                tags: ["#business", "#webapp", "#marketing"],
+                url: "https://github.com/jonnfrancis/tripplesee-ltd"
             },
             {
                 id: 2,
                 title: "Project Portfolio",
-                tags: ["#webdev", "#personal"]
+                tags: ["#webdev", "#personal"],
+                url: "https://github.com/jonnfrancis/jonnfrancis.github.io/"
             },
             {
                 id: 3,
                 title: "Project Data",
-                tags: ["#2024", "#data", "#visualization"]
+                tags: ["#2024", "#data", "#visualization"],
             },
             {
                 id: 4,
                 title: "Project ViteVocab",
-                tags: ["#2023", "#vocabulary", "#learn"]
+                tags: ["#2023", "#vocabulary", "#learn"],
+                url: "https://www.johnfrancis.dev/VocabBoost/"
             },
             {
                 id: 5,
                 title: "Project Movie",
-                tags: ["#movies", "#landingpage", "#series"]
+                tags: ["#movies", "#landingpage", "#series"],
+                url: "https://movie.johnfrancis.dev/"
             },
             {
                 id: 6,
                 title: "Project Dashboard",
-                tags: ["#data", "#analytics", "#datascience"]
+                tags: ["#data", "#analytics", "#datascience"],
             }
             // {
             //     id: 7,
@@ -1084,23 +1087,12 @@
         // Create the projects cards dynamically
         projectsData.forEach((project) => {
             const card = document.createElement("div");
-            card.classList.add("project-card");
+            card.classList.add("project-cardd")
 
-            if (window.innerWidth <= 780) {
-                gsap.from(card, {
-                    scrollTrigger: {
-                        trigger: card,
-                        end: 'bottom 20%',
-                    },
-                    scale: .8,
-                    opacity: 0,
-                    transformOrigin: 'center',
-                    duration: 2,
-                    ease: 'power4.out'
-                })
-             }
+            const cardImage = document.createElement("div");
+            cardImage.classList.add("project-card");
             // Set the background image
-            card.style.backgroundImage = `url('./Projects/${project.id}.png')`;
+            cardImage.style.backgroundImage = `url('./Projects/${project.id}.png')`;
 
             // Create the card text elements
             const cardSubtitle = document.createElement("div");
@@ -1122,11 +1114,20 @@
 
             const cardTitle = document.createElement("div");
             cardTitle.classList.add("card-title");
-            cardTitle.innerHTML = `<a href="https://github.com/jonnfrancis" target="_blank"><span class="title-text">${project.title}</span></a>`;
+            cardTitle.innerHTML = `<a href=${project.url} ><span class="title-text">${project.title}</span></a>`;
 
             // Append the card text elements to the card
-            card.appendChild(cardSubtitle);
-            card.appendChild(cardTitle);
+            cardImage.appendChild(cardSubtitle);
+            cardImage.appendChild(cardTitle);
+
+            const cardLink = document.createElement("a");
+            cardLink.classList.add('card-link');
+            cardLink.innerHTML = `Project Details <img src="./icons/Arrow.svg" class="project-arrow" alt="Arrow icon" style="vertical-align: middle; display: inline;">`
+            cardLink.href = project.url
+            cardLink.style.display = project.url ? "block" : "none"
+            card.appendChild(cardLink)
+
+            card.appendChild(cardImage)
 
             // Append the card to the projects container
             cardContainer.appendChild(card);
@@ -1182,6 +1183,10 @@
                     stagger: .2,
                     y: -500
                 })
+                .to('.card-link', {
+                    stagger: .2,
+                    y: -500
+                }, 0)
 
             gsap.set('.projects-container', {
                 opacity: 0,
@@ -1417,7 +1422,7 @@
             credential.href = jobData.credential;
             credential.innerHTML = `View My Credentials <i class='bx bx-right-top-arrow-circle credential-icon'></i>`;
             credential.style.display = jobData.credential ? "block" : "none";
-            
+
 
             job.appendChild(jobInfo);
             job.appendChild(infoParagraph);
