@@ -1603,12 +1603,12 @@
         titleWrapper.classList.add('title-wrapper');
 
         const title = document.createElement('h2');
-        title.textContent = 'Contact Us';
+        title.textContent = 'Contacts';
         title.classList.add('contact-title');
         titleWrapper.appendChild(title);
 
         const subtitle = document.createElement('p');
-        subtitle.textContent = 'Any question or remarks? Just write me a message!';
+        subtitle.textContent = 'Want to create something amazing together? Just book a meeting!';
         subtitle.classList.add('contact-subtitle');
         titleWrapper.appendChild(subtitle);
 
@@ -1662,134 +1662,32 @@
         feedbackSection.appendChild(feedbackTitle);
 
         const feedbackDescription = document.createElement('p');
-        feedbackDescription.textContent = 'Leave me a message and I will get back to you';
+        feedbackDescription.textContent = 'Book a meeting and let us discuss your web needs';
         feedbackDescription.classList.add('contact-feedback-description');
         feedbackSection.appendChild(feedbackDescription);
 
-        // Create form
-        const form = document.createElement('form');
-        form.setAttribute('id', 'contact-form');
-        form.setAttribute('action', 'your-action-url');
+        const calendly = document.createElement('div');
 
-        // Name input
-        const nameInput = createFeedbackInput('Name', 'text', 'name', 'Your Name');
-        form.appendChild(nameInput);
+        // Set the class attribute
+        calendly.className = 'calendly-inline-widget';
 
-        // Email input
-        const emailInput = createFeedbackInput('Email', 'email', 'email', 'Your Email');
-        form.appendChild(emailInput);
+        // Set the data-url attribute
+        calendly.setAttribute('data-url', 'https://calendly.com/johnfrancis3431/conferencecall?hide_gdpr_banner=1&background_color=1d2549&text_color=ffffff&primary_color=08d463');
+        calendly.setAttribute('data-resize', 'true');
 
-        // Phone input
-        const phoneInput = createFeedbackInput('Message', 'text', 'message', 'Your Message');
-        form.appendChild(phoneInput);
+        // Set the style attributes
+        calendly.style.minWidth = '320px';
+        calendly.style.height = '700px';
 
-        // How did you find us dropdown
-        const dropdownWrapper = document.createElement('div');
-        dropdownWrapper.classList.add('select-wrapper');
+        Calendly.initInlineWidget({
+            url: 'https://calendly.com/johnfrancis3431/conferencecall?hide_gdpr_banner=1&background_color=1d2549&text_color=ffffff&primary_color=08d463',
+            parentElement: calendly,
+            resize: true,
+            prefill: {},
+            utm: {}
+           });
 
-        const dropdownLabel = document.createElement('label');
-        dropdownLabel.textContent = 'How did you find me?';
-        dropdownLabel.setAttribute('for', 'find-us-dropdown');
-        dropdownWrapper.appendChild(dropdownLabel);
-
-        const dropdown = document.createElement('select');
-        dropdown.setAttribute('id', 'find-us-dropdown');
-        dropdownWrapper.appendChild(dropdown);
-
-        const option1 = document.createElement('option');
-        option1.textContent = 'Internet search';
-        dropdown.appendChild(option1);
-
-        const option2 = document.createElement('option');
-        option2.textContent = 'Social media';
-        dropdown.appendChild(option2);
-
-        const option3 = document.createElement('option');
-        option3.textContent = 'Friend recommendation';
-        dropdown.appendChild(option3);
-
-        form.appendChild(dropdownWrapper);
-
-        // Submit button
-        const submitButton = document.createElement('button');
-        submitButton.textContent = 'Submit';
-        submitButton.classList.add('contact-feedback-submit');
-        submitButton.setAttribute('type', 'submit');
-        form.appendChild(submitButton);
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent form submission
-
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('message').value;
-            const findUs = document.getElementById('find-us-dropdown').value;
-
-            if (!name || !email || !phone || !findUs) {
-                alert('Please fill out all fields.');
-                return;
-            }
-
-            const emailRegex = /^\S+@\S+\.\S+$/;
-            if (!emailRegex.test(email)) {
-                alert('Invalid email format.');
-                return;
-            }
-
-            // Create a reference to the Firebase database
-            const database = firebase.database().ref('contacts');
-
-            // Push form data to the database
-            database.push().set({
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    findUs: findUs
-                })
-                .then(() => {
-                    // Form submission success
-                    form.reset();
-                    showSuccessMessage();
-                })
-                .catch((error) => {
-                    // Form submission error
-                    showErrorMessage();
-                    console.error(error);
-                });
-
-        });
-
-        // Add form to feedback section
-        feedbackSection.appendChild(form);
-
-
-
-        // Function to show success message
-        function showSuccessMessage() {
-            const alertDiv = document.createElement('div');
-            alertDiv.classList.add('alert');
-            alertDiv.textContent = "Message sent succesfully! 👍"
-            feedbackSection.appendChild(alertDiv);
-
-            setTimeout(() => {
-                alertDiv.remove();
-                // Reload the page after form submission
-                location.reload();
-            }, 3000);
-        }
-
-        // Function to show error message
-        function showErrorMessage() {
-            const alertDiv = document.createElement('div');
-            alertDiv.classList.add('alert');
-            alertDiv.textContent = "Message could not be sent!😟 "
-            feedbackSection.appendChild(alertDiv);
-
-            setTimeout(() => {
-                alertDiv.remove();
-            }, 3000);
-        }
+        feedbackSection.appendChild(calendly)
 
         container.appendChild(feedbackSection);
 

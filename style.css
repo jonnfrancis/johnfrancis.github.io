@@ -5,7 +5,7 @@
   --clr-primary-400: hsla(230, 50%, 58%, 0.3);
   --clr-primary-300: hsla(229, 36%, 39%, 1);
   --clr-primary-200: hsla(229, 21%, 53%, 1);
-  --clr-accent-400: hsla(147, 93%, 43%, 1);
+  --clr-accent-400: #08d463;
   --clr-secondary-400: hsla(229, 78%, 60%, 1);
 
   --ff-base: "Outfit", sans-serif;
@@ -2023,8 +2023,8 @@ aside {
   background-size: cover;
   mix-blend-mode: lighten;
   flex-direction: column;
-  height: 70vh;
-  justify-content: space-around;
+  height: 80vh;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -2225,6 +2225,10 @@ select::-ms-expand {
     align-items: flex-start;
   }
 
+  .contact-feedback {
+    background: var(--clr-primary-800) !important;
+  }
+
   .contact-info-item {
     flex-direction: row;
   }
@@ -2244,7 +2248,7 @@ select::-ms-expand {
   }
 
   .contact-info {
-    background-position: left;
+    background-position: center;
     align-items: flex-start;
     margin-left: 50px;
   }
@@ -2268,18 +2272,18 @@ select::-ms-expand {
     height: 100%;
     background: var(--clr-primary-800);
     column-gap: 1.5rem;
-    display: grid;
+    /* display: grid; */
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
     padding: 2rem;
-    grid-template-areas:
+    /* grid-template-areas:
       "header header"
       "desc desc"
       "form form"
       "form form"
       "form form"
     ;
-    grid-template-rows: 5rem 3rem 1fr 1fr 1fr;
+    grid-template-rows: 5rem 3rem 1fr 1fr 1fr; */
   }
 
   /* .footer {
