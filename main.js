@@ -1363,10 +1363,11 @@
 
 
         const jobsData = [{
-                year: "2023",
-                certificate: "Introduction to AI",
+                year: "2024",
+                certificate: "CS for AI",
                 institution: "Harvard",
-                info: "This course explores the concepts and algorithms at the foundation of modern artificial intelligence",
+                info: "This course explores the concepts and algorithms at the foundation of modern artificial intelligence with python.",
+                credential: "https://credentials.edx.org/credentials/e49fece8ecf24d0ea5c00a12890d4b4f/"
             },
             {
                 year: "2022",
