@@ -1342,7 +1342,7 @@
 
         const intro = document.createElement("p");
         intro.classList.add("intro");
-        intro.innerHTML = `I embarked on my journey with short courses and youtube tutorials in 2020, progressively advancing to complete two courses from Harvard University.<hr> By 2021, I proudly earned certification as a proficient web developer from Harvard, specializing in Python and JavaScript.<hr>Currently my expertise extends to designing modern web projects and applications, Website Optimizations, Backend Engineering and Database Management.`;
+        intro.innerHTML = `I embarked on my journey with short courses and youtube tutorials in 2020, progressively advancing to complete three courses from Harvard University.<hr>In 2021, I proudly earned a professional credential as a proficient web developer from Harvard University, specializing in Python and JavaScript. This comprehensive course delved into full-stack web development, best web practices, web testing, and web security, all through real-world projects.  In 2024, I achieved another milestone by obtaining a certification in Artificial Intelligence from Harvard University. This program enriched my knowledge and skills in LLMs, neural networks, machine learning, and the development of game AIs.<hr>Currently my expertise extends to designing modern web projects and applications, Website Optimizations, Backend Engineering and Database Management.`;
         main.appendChild(intro);
 
         gsap.from(intro, {
@@ -1363,6 +1363,11 @@
 
 
         const jobsData = [{
+                year: "2024",
+                certificate: "Interactive UI/UX",
+                institution: "DesignCourse",
+                info: "In this course, led by Gary Simon, I am learning the essentials and advanced techniques of UI and motion design.",
+            },{
                 year: "2024",
                 certificate: "CS for AI",
                 institution: "Harvard",
@@ -1468,6 +1473,18 @@
             {
                 imgSrc: "./icons/tailwind.svg",
                 text: "tailwind",
+            },
+            {
+                imgSrc: "./icons/postgresql.svg",
+                text: "postgresql",
+            },
+            {
+                imgSrc: "./icons/python.svg",
+                text: "python",
+            },
+            {
+                imgSrc: "./icons/nodejs.svg",
+                text: "nodejs",
             },
         ];
 
