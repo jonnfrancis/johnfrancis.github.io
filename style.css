@@ -1259,7 +1259,7 @@ img {
   width: 18px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .project-card {
     animation-name: backgroundEffect;
     -webkit-animation-name: backgroundEffect;
@@ -1291,7 +1291,7 @@ img {
     75% {background-position: 50% 0%}
     100% {background-position: 0% 0%}
   }
-}
+} */
 
 .project-card::before {
   content: '';
