@@ -1632,57 +1632,9 @@
 
         container.appendChild(titleWrapper);
 
-        // Contact Info Section
-        const contactInfoSection = document.createElement('div');
-        contactInfoSection.classList.add('contact-info');
-
-        const contactInfoTitle = document.createElement('h4');
-        contactInfoTitle.textContent = 'Contact Information';
-        contactInfoTitle.classList.add('contact-info-title');
-        contactInfoSection.appendChild(contactInfoTitle);
-
-        // Phone
-        const phoneDiv = createContactInfoItem('Phone', '+254-115-429-729', 'bx bx-phone-call');
-        contactInfoSection.appendChild(phoneDiv);
-
-        // Email
-        const emailDiv = createContactInfoItem('Email', 'john.francis3431@gmail.com', 'bx bx-envelope');
-        contactInfoSection.appendChild(emailDiv);
-
-        // Location
-        const locationDiv = createContactInfoItem('Location', 'Nairobi, Kenya', 'bx bx-map');
-        contactInfoSection.appendChild(locationDiv);
-
-        // Social Media
-        const socialMediaDiv = document.createElement('div');
-        socialMediaDiv.classList.add('contact-social-media');
-
-        const linkedInLink = createSocialMediaLink('Linkedin', 'https://linkedin.com/in/john-francis-732259211', 'bx bxl-linkedin');
-        socialMediaDiv.appendChild(linkedInLink);
-
-        const twitterLink = createSocialMediaLink('Github', 'https://github.com/jonnfrancis', 'bx bxl-github');
-        socialMediaDiv.appendChild(twitterLink);
-
-        const instagramLink = createSocialMediaLink('Instagram', 'https://instagram.com/johnfrancis.dev', 'bx bxl-instagram');
-        socialMediaDiv.appendChild(instagramLink);
-
-        contactInfoSection.appendChild(socialMediaDiv);
-
-        container.appendChild(contactInfoSection);
-
         // Feedback Section
         const feedbackSection = document.createElement('div');
         feedbackSection.classList.add('contact-feedback');
-
-        const feedbackTitle = document.createElement('h2');
-        feedbackTitle.textContent = 'Get in touch';
-        feedbackTitle.classList.add('contact-feedback-title');
-        feedbackSection.appendChild(feedbackTitle);
-
-        const feedbackDescription = document.createElement('p');
-        feedbackDescription.textContent = 'Book a meeting and let us discuss your web needs';
-        feedbackDescription.classList.add('contact-feedback-description');
-        feedbackSection.appendChild(feedbackDescription);
 
         const calendly = document.createElement('div');
 

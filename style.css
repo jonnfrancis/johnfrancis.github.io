@@ -1984,6 +1984,7 @@ aside {
 /* Contact Us Section */
 .contact-us-section {
   padding: 24px 0px;
+  background: var(--clr-primary-300);
 }
 
 .contact-container {
@@ -1991,11 +1992,17 @@ aside {
   grid-template-columns: repeat(1, 1fr);
   margin: 0 auto;
   padding: 0 20px;
+  background-image: url("../Projects/dragon.jpg");
+  background-repeat: no-repeat;
+  background-position: 20% 0%;
+  background-size: cover;
+  mix-blend-mode: lighten;
 }
 
 .title-wrapper p {
-  color: var(--clr-primary-200);
+  color: var(--clr-neutral-100);
   text-align: center;
+  padding-top: 0.75rem;
 }
 
 .title-wrapper {
@@ -2007,10 +2014,12 @@ aside {
 .contact-title {
   font-size: var(--fs-700);
   font-weight: var(--fw-bold);
-  color: var(--clr-secondary-400);
-  font-family: 'Inter', sans-serif;
+  color: var(--clr-neutral-100);
+  font-family: 'EB Garamond', sans-serif;
   text-align: center;
-  margin-bottom: 20px;
+  border-bottom: 5px solid #fff;
+  margin-bottom: 1rem;
+  /* margin-bottom: 20px; */
 }
 
 /* Contact Info Section */
@@ -2226,7 +2235,8 @@ select::-ms-expand {
   }
 
   .contact-feedback {
-    background: var(--clr-primary-800) !important;
+    background: var(--clr-primary-400) !important;
+    border-radius: 7px;
   }
 
   .contact-info-item {
@@ -2236,13 +2246,13 @@ select::-ms-expand {
 
 @media (min-width: 1024px) {
   .contact-container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 7rem 1fr;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
     column-gap: 3.125rem;
     grid-template-areas:
-      "title title"
-      "feedback info"
-      "feedback info"
+      "title"
+      "feedback"
+      "feedback"
     ;
     align-items: center;
   }
@@ -2270,7 +2280,6 @@ select::-ms-expand {
   .contact-feedback {
     grid-area: feedback;
     height: 100%;
-    background: var(--clr-primary-800);
     column-gap: 1.5rem;
     /* display: grid; */
     align-items: center;
