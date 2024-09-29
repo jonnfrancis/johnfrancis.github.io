@@ -2349,3 +2349,8 @@ select::-ms-expand {
     grid-area: submit;
   }
 }
+
+.lottie-wrapper {
+  background: #f0e7ff;
+  border-radius: 30px;
+}

@@ -1,6 +1,7 @@
     import './style.css'
     import './font.css'
     import Lenis from '@studio-freight/lenis'
+    import lottie from 'lottie-web'
 
     console.log("Portfolio is live!")
 
@@ -1281,6 +1282,10 @@
     }
 
     function addResumeSection() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
         gsap.timeline()
             .to(".logo", {
                 autoAlpha: 0,
@@ -1586,6 +1591,10 @@
 
 
     function addContactUsSection() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
 
         gsap.timeline().to('.navbar', {
             y: '-50',
@@ -1636,6 +1645,22 @@
         const feedbackSection = document.createElement('div');
         feedbackSection.classList.add('contact-feedback');
 
+        const lottieWrapper = document.createElement('div');
+        lottieWrapper.classList.add('lottie-wrapper');
+        lottieWrapper.style.width = '350px';
+        lottieWrapper.style.height = '350px';
+        lottieWrapper.style.margin = 'auto';
+        feedbackSection.appendChild(lottieWrapper);
+
+        // Load Lottie animation
+        const lottieAnimation = lottie.loadAnimation({
+            container: lottieWrapper,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: './Projects/vid-call.json'
+        });
+
         const calendly = document.createElement('div');
 
         // Set the class attribute
@@ -1648,14 +1673,43 @@
         // Set the style attributes
         calendly.style.minWidth = '320px';
         calendly.style.height = '700px';
+        calendly.style.visibility = 'hidden';
 
         Calendly.initInlineWidget({
             url: 'https://calendly.com/johnfrancis3431/conferencecall?hide_gdpr_banner=1&background_color=1d2549&text_color=ffffff&primary_color=08d463',
             parentElement: calendly,
             resize: true,
             prefill: {},
-            utm: {}
+            utm: {},
            });
+        
+           setTimeout(() => {
+            lottieAnimation.destroy();
+        
+            gsap.timeline()
+            .to(lottieWrapper, {
+                autoAlpha: 0.6,
+                rotation: 50,
+                duration: 0.7,
+                ease: 'power2.inOut',
+                duration: 0.5,
+                scale: 0.8,
+            })
+            .to(lottieWrapper, {
+                autoAlpha: 0,
+                rotation: 100,
+                duration: 0.5,
+                onComplete: () => {
+                    lottieWrapper.remove(); 
+                   
+                    gsap.to(calendly, {
+                        autoAlpha: 1,
+                        duration: 1,
+                        ease: 'power4.out'
+                    });
+                }
+            });
+        }, 4000);
 
         feedbackSection.appendChild(calendly)
 
